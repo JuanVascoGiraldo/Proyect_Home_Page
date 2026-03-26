@@ -3,18 +3,21 @@
   padding: clamp(2rem, 4vw, 3.2rem) clamp(1rem, 2.2vw, 1.6rem);
   background: #eceef1;
   border: 1px solid #e1e3e8;
+  box-shadow: 0 18px 36px -28px rgba(18, 26, 40, 0.55), inset 0 0 0 1px rgba(255, 255, 255, 0.35), inset 0 16px 28px -20px rgba(18, 26, 40, 0.42), inset 0 -16px 24px -20px rgba(18, 26, 40, 0.35);
   position: relative;
   clip-path: polygon(
-    0% 2%,           /* Inicio: superior izquierda, bajado al 2% */
-    10% 0%,          /* Pestaña: sube diagonal a la cúspide */
-    30% 0%,          /* Pestaña: plano en la cúspide */
-    33% 2%,          /* Pestaña: baja diagonal */
-    100% 2%,         /* Plano a la derecha (superior) */
-    100% 98%,        /* Baja a la línea del 98% */
-    33% 98%,         /* Muesca: plano al 98% */
-    30% 100%,        /* Muesca: baja diagonal */
-    10% 100%,        /* Muesca: plano al fondo */
-    0% 98%           /* Muesca: sube diagonal */
+    0% 3%,           /* Inicio: superior izquierda, bajado al 2% */
+    60% 3%,          /* Pestaña: sube diagonal a la cúspide */
+    62% 0%,          /* Pestaña: plano en la cúspide */
+    88% 0%,          /* Pestaña: baja diagonal */
+    90% 3%,         /* Plano a la derecha (superior) */
+    100% 3%,        /* Baja a la línea del 98% */
+    100% 97%,        /* Baja a la línea del 98% */
+    40% 97%,        /* Baja a la línea del 98% */
+    38% 100%,         /* Muesca: plano al 98% */
+    12% 100%,        /* Muesca: baja diagonal */
+    10% 97%,        /* Muesca: plano al fondo */
+    0% 97%           /* Muesca: sube diagonal */
   );
 }
 

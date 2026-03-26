@@ -87,7 +87,7 @@
   grid-template-columns: auto 1fr auto;
   gap: clamp(1rem, 2vw, 1.5rem);
   align-items: center;
-  padding: clamp(1rem, 1.8vw, 1.5rem) clamp(1.2rem, 2vw, 1.6rem);
+  padding: clamp(0.6rem, 1.1vw, 0.9rem) clamp(0.7rem, 1.2vw, 1rem);
   background: transparent;
   border: none;
   border-bottom: 1px solid #d5d8de;
