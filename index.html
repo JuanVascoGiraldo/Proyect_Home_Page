@@ -228,10 +228,11 @@
               </p>
             </header>
 
-            <article class="cargo-tech-card">
+            <article class="cargo-tech-card" id="cargoCarousel" aria-roledescription="carrusel" aria-label="Verticales">
               <div class="cargo-media-wrap">
                 <img
                   class="cargo-media"
+                  id="cargoMedia"
                   src="https://images.unsplash.com/photo-1604719312566-8912e9c8a213?auto=format&fit=crop&w=1200&q=80"
                   alt="Pasillo de supermercado"
                 />
@@ -239,19 +240,19 @@
 
               <div class="cargo-content">
                 <div class="cargo-content-main">
-                  <h3 class="cargo-item-title">Consumo</h3>
-                  <p class="cargo-description">
+                  <h3 class="cargo-item-title" id="cargoItemTitle">Consumo</h3>
+                  <p class="cargo-description" id="cargoDescription1">
                     Atendemos al sector de consumo garantizando cadenas de suministro agiles, seguras y altamente eficientes.
                   </p>
-                  <p class="cargo-description">
+                  <p class="cargo-description" id="cargoDescription2">
                     Gestionamos el movimiento de productos terminados, bienes de uso diario y mercancia de alta rotacion,
                     asegurando entregas puntuales y una operacion flexible que se adapta a picos de demanda y temporadas.
                   </p>
-                  <a href="#" class="cargo-btn">Conoce nuestras soluciones</a>
+                  <a href="#" class="cargo-btn" id="cargoBtn">Conoce nuestras soluciones</a>
                 </div>
 
                 <aside class="cargo-stepper" aria-label="Indicador de verticales">
-                  <span class="cargo-step-top">01</span>
+                  <span class="cargo-step-top" id="cargoStepCurrent">01</span>
                   <span class="cargo-step-line" aria-hidden="true"></span>
                   <span class="cargo-step-bottom">06</span>
                 </aside>

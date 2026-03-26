@@ -3,21 +3,21 @@
   padding: clamp(2rem, 4vw, 3.2rem) clamp(1rem, 2.2vw, 1.6rem);
   background: #eceef1;
   border: 1px solid #e1e3e8;
-  box-shadow: 0 18px 36px -28px rgba(18, 26, 40, 0.55), inset 0 0 0 1px rgba(255, 255, 255, 0.35), inset 0 16px 28px -20px rgba(18, 26, 40, 0.42), inset 0 -16px 24px -20px rgba(18, 26, 40, 0.35);
+  box-shadow: 0 -8px 14px -14px rgba(18, 26, 40, 0.5), 0 20px 30px -18px rgba(18, 26, 40, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.55), inset 0 14px 22px -20px rgba(18, 26, 40, 0.28), inset 0 -14px 20px -16px rgba(18, 26, 40, 0.3);
   position: relative;
   clip-path: polygon(
-    0% 3%,           /* Inicio: superior izquierda, bajado al 2% */
-    60% 3%,          /* Pestaña: sube diagonal a la cúspide */
-    62% 0%,          /* Pestaña: plano en la cúspide */
-    88% 0%,          /* Pestaña: baja diagonal */
-    90% 3%,         /* Plano a la derecha (superior) */
-    100% 3%,        /* Baja a la línea del 98% */
-    100% 97%,        /* Baja a la línea del 98% */
-    40% 97%,        /* Baja a la línea del 98% */
-    38% 100%,         /* Muesca: plano al 98% */
-    12% 100%,        /* Muesca: baja diagonal */
-    10% 97%,        /* Muesca: plano al fondo */
-    0% 97%           /* Muesca: sube diagonal */
+    0% 3%,
+    56% 3%,
+    59% 0%,
+    86% 0%,
+    89% 3%,
+    100% 3%,
+    100% 97%,
+    43% 97%,
+    40% 100%,
+    10% 100%,
+    7% 97%,
+    0% 97%
   );
 }
 
@@ -82,6 +82,12 @@
   aspect-ratio: 16 / 11;
   object-fit: cover;
   display: block;
+  transition: opacity 220ms ease;
+}
+
+.cargo-media.is-changing,
+.cargo-content-main.is-changing {
+  opacity: 0.65;
 }
 
 .cargo-content {
@@ -93,6 +99,7 @@
 
 .cargo-content-main {
   padding-top: clamp(0.2rem, 1vw, 0.8rem);
+  transition: opacity 220ms ease;
 }
 
 .cargo-item-title {
