@@ -35,9 +35,10 @@ function initCargoCarousel() {
   const description1 = document.getElementById('cargoDescription1');
   const description2 = document.getElementById('cargoDescription2');
   const stepCurrent = document.getElementById('cargoStepCurrent');
+  const stepper = document.querySelector('.cargo-stepper');
   const contentMain = document.querySelector('.cargo-content-main');
 
-  if (!section || !media || !title || !description1 || !description2 || !stepCurrent || !contentMain) {
+  if (!section || !media || !title || !description1 || !description2 || !stepCurrent || !stepper || !contentMain) {
     return;
   }
 
@@ -102,6 +103,8 @@ function initCargoCarousel() {
       description1.textContent = item.text1;
       description2.textContent = item.text2;
       stepCurrent.textContent = String(index + 1).padStart(2, '0');
+      const progress = (index / (slides.length - 1)) * 100;
+      stepper.style.setProperty('--progress', `${progress}%`);
       media.classList.remove('is-changing');
       contentMain.classList.remove('is-changing');
     }, 120);

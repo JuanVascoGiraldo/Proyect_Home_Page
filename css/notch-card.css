@@ -121,19 +121,31 @@
 }
 
 .cargo-stepper {
-  min-width: 2.4rem;
-  display: grid;
-  justify-items: center;
-  grid-template-rows: auto 1fr auto;
+  --progress: 0%;
+  min-width: 2.8rem;
+  min-height: clamp(11rem, 20vh, 15rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   color: #0072bc;
   font-weight: 700;
   font-size: clamp(1.15rem, 1.35vw, 1.45rem);
+  gap: clamp(0.85rem, 1.5vh, 1.3rem);
 }
 
 .cargo-step-line {
-  width: 1px;
-  background: #565d67;
-  margin: 0.6rem 0;
+  width: 2px;
+  flex: 1;
+  min-height: clamp(6.8rem, 13vh, 10rem);
+  border-radius: 999px;
+  background: linear-gradient(
+    to bottom,
+    #0072bc 0%,
+    #0072bc var(--progress),
+    #7a8390 var(--progress),
+    #7a8390 100%
+  );
 }
 
 .cargo-btn {
@@ -185,16 +197,28 @@
 
   .cargo-stepper {
     order: -1;
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: 1fr;
+    min-height: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    gap: 0.8rem;
     min-width: 0;
     margin-bottom: 0.4rem;
   }
 
   .cargo-step-line {
     width: 100%;
-    height: 1px;
-    margin: 0 0.7rem;
+    height: 2px;
+    min-height: 0;
+    flex: 1;
+    background: linear-gradient(
+      to right,
+      #0072bc 0%,
+      #0072bc var(--progress),
+      #7a8390 var(--progress),
+      #7a8390 100%
+    );
   }
 }
