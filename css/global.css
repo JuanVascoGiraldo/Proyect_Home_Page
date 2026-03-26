@@ -1,0 +1,58 @@
+@import url("./header.css");
+@import url("./hero.css");
+@import url("./innovation.css");
+@import url("./notch-card.css");
+@import url("./containers.css");
+@import url("./footer.css");
+
+:root {
+  --color1: #1f3864;
+  --color2: #9ec3e6;
+  --color3: #0072bc;
+  --color4: #231f20;
+  --color5: #2f5697;
+  --color6: #6d6e71;
+
+  --color-bg-page: #eef2f7;
+  --color-surface: #ffffff;
+  --color-border: var(--color1);
+  --color-title: var(--color4);
+  --color-gradient: var(--color2);
+  --color-tab: var(--color5);
+  --color-header-bg: var(--color1);
+  --color-header-bg-deep: var(--color1);
+  --color-header-text: #e8f0ff;
+  --color-header-text-soft: var(--color2);
+  --color-header-active: #ffffff;
+  --color-brand-mark: var(--color3);
+  --header-offset: 96px;
+  --color-footer-bg: #050505;
+  --color-footer-title: #d4d6da;
+  --color-footer-text: #8d9096;
+  --color-footer-link: #b5b8be;
+  --hero-overlay-top-size: 60%;
+  --hero-overlay-bottom-size: 20%;
+}
+
+body {
+  margin: 0;
+  padding-top: var(--header-offset);
+  background: var(--color1);
+  color: var(--color-title);
+}
+
+.page-wrapper {
+  min-height: calc(100vh - var(--header-offset));
+  display: flex;
+  flex-direction: column;
+}
+
+.page-main {
+  flex: 1;
+}
+
+@media (max-width: 576px) {
+  :root {
+    --header-offset: 220px;
+  }
+}

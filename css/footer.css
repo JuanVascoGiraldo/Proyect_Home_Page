@@ -1,0 +1,144 @@
+.site-footer {
+  margin-top: 3rem;
+  background-color: var(--color-footer-bg);
+}
+
+.footer-shell {
+  padding-top: 3.2rem;
+  padding-bottom: 2.8rem;
+  display: grid;
+  grid-template-columns: 1.65fr 0.7fr 0.85fr;
+  column-gap: clamp(1.5rem, 4vw, 4.2rem);
+}
+
+.footer-col {
+  min-width: 0;
+}
+
+.footer-brand-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.footer-brand-row .brand-text {
+  font-size: 2rem;
+}
+
+.footer-brand-row .brand-subtext {
+  color: var(--color-footer-link);
+}
+
+.footer-meta,
+.footer-address {
+  margin: 0;
+  color: var(--color-footer-text);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.6rem;
+}
+
+.footer-inline-link {
+  color: var(--color-footer-link);
+}
+
+.footer-inline-link,
+.footer-nav a,
+.footer-contact-item {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-inline-link:hover,
+.footer-inline-link:focus-visible,
+.footer-nav a:hover,
+.footer-nav a:focus-visible,
+.footer-contact-item:hover,
+.footer-contact-item:focus-visible,
+.footer-social:hover,
+.footer-social:focus-visible {
+  color: #ffffff;
+}
+
+.footer-title {
+  margin: 0 0 0.8rem;
+  color: var(--color-footer-title);
+  font-size: 1.02rem;
+  font-weight: 500;
+  letter-spacing: 0.03rem;
+}
+
+.footer-nav {
+  display: grid;
+  row-gap: 0.52rem;
+}
+
+.footer-nav a {
+  color: var(--color-footer-text);
+  font-size: 1rem;
+}
+
+.footer-contact-list {
+  display: grid;
+  row-gap: 0.66rem;
+  margin-bottom: 1rem;
+}
+
+.footer-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--color-footer-link);
+  font-size: 1rem;
+}
+
+.footer-contact-item svg,
+.footer-social svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.footer-social {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 0.32rem;
+  background-color: #c7c9ce;
+  color: #141416;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-social svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  fill: currentColor;
+  stroke: none;
+}
+
+@media (max-width: 576px) {
+  .footer-shell {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    padding-top: 2.2rem;
+    padding-bottom: 2.2rem;
+  }
+
+  .footer-brand-row .brand-text {
+    font-size: 1.65rem;
+  }
+
+  .footer-meta {
+    gap: 0.8rem;
+  }
+}
