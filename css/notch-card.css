@@ -34,9 +34,9 @@
 
 .cargo-tech-card {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: clamp(1.6rem, 3vw, 3.5rem);
-  align-items: start;
+  align-items: center;
 }
 
 .cargo-kicker {
@@ -65,6 +65,8 @@
 
 .cargo-media-wrap {
   position: relative;
+  width: 92%;
+  margin: 0 auto;
   border-radius: 0.9rem;
   overflow: hidden;
   clip-path: polygon(
@@ -94,11 +96,12 @@
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 1.2rem;
-  align-items: stretch;
+  align-items: center;
 }
 
 .cargo-content-main {
-  padding-top: clamp(0.2rem, 1vw, 0.8rem);
+  padding-top: 0;
+  align-self: center;
   transition: opacity 220ms ease;
 }
 
@@ -170,6 +173,10 @@
   .cargo-tech-card {
     grid-template-columns: 1fr;
     gap: 1.3rem;
+  }
+
+  .cargo-media-wrap {
+    width: 100%;
   }
 
   .cargo-content {
