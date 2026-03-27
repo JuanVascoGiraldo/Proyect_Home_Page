@@ -235,13 +235,79 @@ function initCargoCarousel() {
   window.addEventListener('touchmove', onTouchMove, { passive: false });
 }
 
+function initGalleryImageHoverSwap() {
+  const galleryImages = document.querySelectorAll('.service-card--image img');
+  if (galleryImages.length === 0) {
+    return;
+  }
+
+  function buildHoverSrc(source) {
+    const queryIndex = source.indexOf('?');
+    const hashIndex = source.indexOf('#');
+    let cutIndex = source.length;
+
+    if (queryIndex !== -1) {
+      cutIndex = Math.min(cutIndex, queryIndex);
+    }
+
+    if (hashIndex !== -1) {
+      cutIndex = Math.min(cutIndex, hashIndex);
+    }
+
+    const basePath = source.slice(0, cutIndex);
+    const suffix = source.slice(cutIndex);
+    const lastSlash = basePath.lastIndexOf('/');
+    const dotIndex = basePath.lastIndexOf('.');
+
+    if (dotIndex <= lastSlash) {
+      return `${basePath}_aul${suffix}`;
+    }
+
+    if (basePath.slice(lastSlash + 1, dotIndex).endsWith('_azul')) {
+      return `${basePath}${suffix}`;
+    }
+
+    const pathWithHover = `${basePath.slice(0, dotIndex)}_azul${basePath.slice(dotIndex)}`;
+    return `${pathWithHover}${suffix}`;
+  }
+
+  galleryImages.forEach((image) => {
+    const originalSrc = image.getAttribute('src');
+    if (!originalSrc) {
+      return;
+    }
+
+    const hoverSrc = buildHoverSrc(originalSrc);
+    image.dataset.originalSrc = originalSrc;
+    image.dataset.hoverSrc = hoverSrc;
+
+    image.addEventListener('mouseenter', () => {
+      image.src = image.dataset.hoverSrc;
+    });
+
+    image.addEventListener('mouseleave', () => {
+      image.src = image.dataset.originalSrc;
+    });
+
+    image.addEventListener('focus', () => {
+      image.src = image.dataset.hoverSrc;
+    });
+
+    image.addEventListener('blur', () => {
+      image.src = image.dataset.originalSrc;
+    });
+  });
+}
+
 // Ejecutar cuando el DOM esté listo
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     animateCounters();
     initCargoCarousel();
+    initGalleryImageHoverSwap();
   });
 } else {
   animateCounters();
   initCargoCarousel();
+  initGalleryImageHoverSwap();
 }

@@ -2,6 +2,7 @@
 @import url("./hero.css");
 @import url("./innovation.css");
 @import url("./notch-card.css");
+@import url("./services-gallery.css");
 @import url("./containers.css");
 @import url("./footer.css");
 
@@ -29,6 +30,7 @@
   --color4: #3F5794;
   --color5: #6D6E70;
   --color6: #272425 ;
+  --color7: #0171BC;
 
   --color-bg-page: #eef2f7;
   --color-surface: #ffffff;
