@@ -43,7 +43,6 @@
   margin: 0;
   color: #0072bc;
   font-size: clamp(1.55rem, 2.8vw, 2.35rem);
-  font-weight: 800;
   letter-spacing: 0.01em;
   text-transform: uppercase;
 }
@@ -69,14 +68,6 @@
   margin: 0 auto;
   border-radius: 0.9rem;
   overflow: hidden;
-  clip-path: polygon(
-    0% 0%,
-    100% 0%,
-    100% 100%,
-    8% 100%,
-    8% 89%,
-    0% 84%
-  );
 }
 
 .cargo-media {
@@ -114,7 +105,7 @@
 
 .cargo-description {
   margin: 0.9rem 0 0;
-  color: #4d535c;
+  color: #000000;
   font-size: clamp(0.88rem, 1vw, 1rem);
   line-height: 1.48;
   max-width: 52ch;
@@ -185,6 +176,7 @@
   .cargo-tech-card {
     grid-template-columns: 1fr;
     gap: 1.3rem;
+    margin-bottom: 10%;
   }
 
   .cargo-media-wrap {

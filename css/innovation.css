@@ -24,7 +24,6 @@
   margin: 0;
   color: #0072bc;
   font-size: clamp(1.395rem, 2.52vw, 2.115rem);
-  font-weight: 800;
   letter-spacing: 0.01em;
   text-transform: uppercase;
 }
@@ -47,13 +46,13 @@
 .innovation-btn {
   display: inline-block;
   padding: clamp(0.7rem, 1.2vw, 1rem) clamp(1.5rem, 2.8vw, 2.2rem);
-  background: #0072bc;
+  background: var(--color3);
   color: #ffffff;
   text-decoration: none;
   font-size: clamp(0.675rem, 0.855vw, 0.855rem);
   font-weight: 600;
   border-radius: 0.35rem;
-  border: 2px solid #0072bc;
+  border: 2px solid var(--color3);
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -118,7 +117,7 @@
 .innovation-index {
   flex-shrink: 0;
   font-weight: 800;
-  color: #0072bc;
+  color: var(--color4);
   font-size: clamp(0.99rem, 1.62vw, 1.44rem);
 }
 

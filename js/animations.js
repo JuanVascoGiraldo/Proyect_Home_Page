@@ -36,54 +36,68 @@ function initCargoCarousel() {
   const description2 = document.getElementById('cargoDescription2');
   const stepCurrent = document.getElementById('cargoStepCurrent');
   const stepper = document.querySelector('.cargo-stepper');
+  const cargoContent = document.querySelector('.cargo-content');
   const contentMain = document.querySelector('.cargo-content-main');
 
-  if (!section || !media || !title || !description1 || !description2 || !stepCurrent || !stepper || !contentMain) {
+  if (!section || !media || !title || !description1 || !description2 || !stepCurrent || !stepper || !cargoContent || !contentMain) {
     return;
+  }
+
+  let hasCenteredCargoContent = false;
+
+  function centerCargoContent() {
+    // if (hasCenteredCargoContent) {
+    //   return;
+    // }
+
+    // hasCenteredCargoContent = true;
+    // cargoContent.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // cargoContent.setAttribute('tabindex', '-1');
+    // cargoContent.focus({ preventScroll: true });
   }
 
   const slides = [
     {
       title: 'Consumo',
-      image: 'https://images.unsplash.com/photo-1604719312566-8912e9c8a213?auto=format&fit=crop&w=1200&q=80',
+      image: './resources/notch/consumption.webp',
       alt: 'Pasillo de supermercado',
-      text1: 'Atendemos al sector de consumo garantizando cadenas de suministro agiles, seguras y altamente eficientes.',
-      text2: 'Gestionamos productos de alta rotacion con entregas puntuales y operacion flexible para picos de demanda.'
+      text1: 'Atendemos al sector de consumo garantizando cadenas de suministro ágiles, seguras y altamente eficientes.',
+      text2: 'Gestionamos el movimiento de productos terminados, bienes de uso diario y mercancía de alta rotación, asegurando entregas puntuales y una operación flexible que se adapta a picos de demanda y temporadas.'
     },
     {
       title: 'Pharma',
       image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1200&q=80',
       alt: 'Laboratorio farmaceutico',
-      text1: 'Operamos cadenas farmaceuticas con control estricto de temperatura, trazabilidad y cumplimiento regulatorio.',
-      text2: 'Aseguramos integridad de producto y visibilidad end-to-end desde almacen hasta punto de entrega.'
+      text1: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.',
+      text2: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.'
     },
     {
       title: 'Automotriz',
       image: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1200&q=80',
       alt: 'Linea de produccion automotriz',
-      text1: 'Coordinamos abastecimiento just-in-time para plantas automotrices con ventanas de entrega criticas.',
-      text2: 'Reducimos paros de linea mediante planeacion dinamica de rutas, inventario y capacidad de transporte.'
+      text1: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.',
+      text2: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.'
     },
     {
       title: 'Retail',
       image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=1200&q=80',
       alt: 'Centro de distribucion retail',
-      text1: 'Impulsamos operaciones omnicanal para retail con alto volumen y necesidades de reposicion acelerada.',
-      text2: 'Sincronizamos centros de distribucion, ultima milla y surtido para mejorar disponibilidad en anaquel.'
+      text1: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.',
+      text2: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.'
     },
     {
       title: 'Tecnologia',
       image: 'https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1200&q=80',
       alt: 'Componentes de tecnologia',
-      text1: 'Movemos componentes y equipos de alto valor con protocolos de seguridad y manejo especializado.',
-      text2: 'Optimizamos tiempos de reposicion y disminuimos riesgo operativo en cadenas de suministro electronicas.'
+      text1: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.',
+      text2: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.'
     },
     {
       title: 'Aeroespacial',
       image: 'https://images.unsplash.com/photo-1517976547714-720226b864c1?auto=format&fit=crop&w=1200&q=80',
       alt: 'Industria aeroespacial',
-      text1: 'Gestionamos partes criticas para el sector aeroespacial con altos estandares de cumplimiento y precision.',
-      text2: 'Alineamos tiempos de importacion, aduana y entrega para mantener continuidad de operacion en plantas.'
+      text1: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.',
+      text2: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.'
     }
   ];
 
@@ -193,6 +207,24 @@ function initCargoCarousel() {
       event.preventDefault();
       touchStartY = event.touches[0].clientY;
     }
+  }
+
+  if ('IntersectionObserver' in window) {
+    const cargoFocusObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
+            centerCargoContent();
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        threshold: [0.55]
+      }
+    );
+
+    cargoFocusObserver.observe(cargoContent);
   }
 
   renderSlide(currentIndex);

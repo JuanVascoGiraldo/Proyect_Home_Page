@@ -84,8 +84,8 @@
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .hero-btn-primary {
-  background-color: var(--color3);
-  border: 1px solid var(--color3);
+  background-color: var(--color4);
+  border: 1px solid var(--color4);
   color: #ffffff;
 }
 
@@ -107,7 +107,7 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 0;
-  width: min(55vw, 930px);
+  width: min(58vw, 980px);
   padding: clamp(0.7rem, 1.5vw, 1rem) clamp(0.9rem, 2vw, 1.2rem);
   background: rgba(15, 23, 42, 0.107);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -195,7 +195,7 @@
 @media (max-width: 1200px) {
   .stats-bar {
     grid-template-columns: repeat(3, 1fr);
-    width: min(49vw, 760px);
+    width: min(52vw, 800px);
     padding: clamp(0.65rem, 1.3vw, 0.95rem) clamp(0.85rem, 1.8vw, 1.1rem);
   }
 
@@ -207,7 +207,7 @@
 @media (max-width: 768px) {
   .stats-bar {
     grid-template-columns: repeat(2, 1fr);
-    width: min(55vw, 615px);
+    width: min(58vw, 650px);
     padding: clamp(0.6rem, 1.2vw, 0.9rem) clamp(0.8rem, 1.6vw, 1rem);
     bottom: 1rem;
     right: 1rem;
@@ -221,7 +221,7 @@
 @media (max-width: 480px) {
   .stats-bar {
     grid-template-columns: repeat(2, 1fr);
-    width: min(57vw, 475px);
+    width: min(60vw, 500px);
     padding: clamp(0.55rem, 1.1vw, 0.85rem) clamp(0.75rem, 1.5vw, 0.95rem);
     bottom: 0.8rem;
     right: 0.8rem;
@@ -244,8 +244,8 @@
 }
 
 .hero-btn-outline {
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid #ffffff;
+  background-color: var(--color3);
+  border: 1px solid var(--color3);
   color: #ffffff;
 }
 

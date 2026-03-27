@@ -25,6 +25,13 @@
   color: var(--color-header-active);
 }
 
+.brand-logo {
+  display: block;
+  height: clamp(2rem, 3.8vw, 3.1rem);
+  width: auto;
+  object-fit: contain;
+}
+
 .brand-mark {
   width: 20px;
   height: 28px;
@@ -134,6 +141,10 @@
   .main-nav,
   .locale-tools {
     justify-self: center;
+  }
+
+  .brand-logo {
+    height: clamp(1.9rem, 9vw, 2.7rem);
   }
 
   .main-nav {
