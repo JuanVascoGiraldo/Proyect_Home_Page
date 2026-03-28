@@ -1,0 +1,57 @@
+.infrastructure-section {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    min-height: 220px;
+    background-image: url("../resources/infrastructure/backg.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+        clip-path: polygon(
+        0% 0%,
+        5% 0%,
+        7% 5%,
+        28% 5%,
+        30% 0%,
+        100% 0%,
+        100% 100%,
+        0% 100%
+    );
+    margin-top: -5%;
+    z-index: 1;
+}
+
+.infrastructure-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 20, 32, 0.3);
+    }
+
+.infrastructure-shell {
+    position: relative;
+    z-index: 1;
+    width: min(1320px, 100% - 4rem);
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.infrastructure-text {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(1.15rem, 2.1vw, 2rem);
+    font-weight: 600;
+    line-height: 1.25;
+    max-width: 28ch;
+}
+
+@media (max-width: 640px) {
+    .infrastructure-shell {
+        width: min(1320px, 100% - 1.5rem);
+    }
+
+    .infrastructure-section {
+        min-height: 190px;
+    }
+}

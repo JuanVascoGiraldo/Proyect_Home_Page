@@ -3,83 +3,81 @@
 @import url("./innovation.css");
 @import url("./notch-card.css");
 @import url("./services-gallery.css");
+@import url("./traceability.css");
+@import url("./security.css");
+@import url("./performance.css");
+@import url("./infrastructure.css");
 @import url("./containers.css");
 @import url("./footer.css");
 
 @font-face {
-  font-family: "Figtree";
-  src: url("../resources/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Figtree";
+    src: url("../resources/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Figtree";
-  src: url("../resources/fonts/Figtree-Italic-VariableFont_wght.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: italic;
-  font-display: swap;
+    font-family: "Figtree";
+    src: url("../resources/fonts/Figtree-Italic-VariableFont_wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
 }
 
 :root {
-  --font-primary: "Figtree", sans-serif;
-  --color1: #2C3B63;
-  --color2: #A8C2E4;
-  --color3: #4071B8;
-  --color4: #3F5794;
-  --color5: #6D6E70;
-  --color6: #272425 ;
-  --color7: #0171BC;
+    --font-primary: "Figtree", sans-serif;
+    --color1: #2C3B63;
+    --color2: #A8C2E4;
+    --color3: #4071B8;
+    --color4: #3F5794;
+    --color5: #6D6E70;
+    --color6: #272425 ;
+    --color7: #0171BC;
 
-  --color-bg-page: #eef2f7;
-  --color-surface: #ffffff;
-  --color-border: var(--color1);
-  --color-title: var(--color4);
-  --color-gradient: var(--color2);
-  --color-tab: var(--color5);
-  --color-header-bg: var(--color1);
-  --color-header-bg-deep: var(--color1);
-  --color-header-text: #e8f0ff;
-  --color-header-text-soft: var(--color2);
-  --color-header-active: #ffffff;
-  --color-brand-mark: var(--color3);
-  --header-offset: 96px;
-  --color-footer-bg: #050505;
-  --color-footer-title: #d4d6da;
-  --color-footer-text: #8d9096;
-  --color-footer-link: #b5b8be;
-  --hero-overlay-top-size: 60%;
-  --hero-overlay-bottom-size: 20%;
+    --color-bg-page: #eef2f7;
+    --color-surface: #ffffff;
+    --color-border: var(--color1);
+    --color-title: var(--color4);
+    --color-gradient: var(--color2);
+    --color-tab: var(--color5);
+    --color-header-bg: var(--color1);
+    --color-header-bg-deep: var(--color1);
+    --color-header-text: #e8f0ff;
+    --color-header-text-soft: var(--color2);
+    --color-header-active: #ffffff;
+    --color-brand-mark: var(--color3);
+    --header-offset: 96px;
+    --color-footer-bg: #050505;
+    --color-footer-title: #d4d6da;
+    --color-footer-text: #8d9096;
+    --color-footer-link: #b5b8be;
+    --hero-overlay-top-size: 60%;
+    --hero-overlay-bottom-size: 20%;
 }
 
 body {
-  margin: 0;
-  padding-top: var(--header-offset);
-  background: var(--color1);
-  color: var(--color-title);
-  font-family: var(--font-primary);
+    margin: 0;
+    padding-top: var(--header-offset);
+    background: var(--color1);
+    color: var(--color-title);
+    font-family: var(--font-primary);
 }
 
 button,
 input,
 select,
 textarea {
-  font-family: var(--font-primary);
+    font-family: var(--font-primary);
 }
 
 .page-wrapper {
-  min-height: calc(100vh - var(--header-offset));
-  display: flex;
-  flex-direction: column;
+    min-height: calc(100vh - var(--header-offset));
+    display: flex;
+    flex-direction: column;
 }
 
 .page-main {
-  flex: 1;
-}
-
-@media (max-width: 576px) {
-  :root {
-    --header-offset: 220px;
-  }
+    flex: 1;
 }

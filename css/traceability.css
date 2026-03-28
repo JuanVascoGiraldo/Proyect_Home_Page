@@ -1,0 +1,103 @@
+.traceability-section {
+    width: 100%;
+    padding: clamp(2rem, 4vw, 3.2rem) clamp(1rem, 2.2vw, 1.6rem);
+    background: #eceef1;
+    border: 1px solid #e1e3e8;
+    box-shadow: 0 -8px 14px -14px rgba(18, 26, 40, 0.5), 0 20px 30px -18px rgba(18, 26, 40, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    position: relative;
+    clip-path: polygon(
+        0% 3%,
+        56% 3%,
+        59% 0%,
+        86% 0%,
+        89% 3%,
+        100% 3%,
+        100% 100%,
+        0% 100%
+    );
+    
+    }
+
+.traceability-shell {
+    width: min(1320px, 100% - 4rem);
+    margin: 0 auto;
+    }
+
+.traceability-header {
+    text-align: center;
+    margin: 0 auto clamp(2.2rem, 4vw, 3.2rem);
+    }
+
+.traceability-kicker {
+    margin: 0;
+    color: var(--color7);
+    font-size: clamp(1.6rem, 2.5vw, 2.3rem);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    }
+
+.traceability-title {
+    margin: 0.5rem 0 0;
+    color: #000000;
+    font-size: clamp(1.35rem, 2.2vw, 2rem);
+    font-weight: 500;
+    }
+
+.traceability-text {
+    margin: 0.9rem auto 0;
+    max-width: 800px;
+    color: #727984;
+    font-size: clamp(0.9rem, 1.05vw, 1.02rem);
+    line-height: 1.65;
+    }
+
+.traceability-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(2.5rem, 4vw, 3.4rem);
+    justify-items: center;
+    align-items: start;
+    }
+
+.trace-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    row-gap: 0.8rem;
+    }
+
+.trace-item img {
+    width: clamp(50px, 4vw, 60px);
+    height: clamp(50px, 4vw, 60px);
+    object-fit: contain;
+    object-position: center;
+    }
+
+.trace-item span {
+    color: #21262f;
+    font-family: "Montserrat", "Figtree", sans-serif;
+    font-size: clamp(0.88rem, 1vw, 1rem);
+    font-weight: 500;
+    text-transform: capitalize;
+    }
+
+@media (max-width: 1024px) {
+.traceability-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    }
+
+@media (max-width: 640px) {
+.traceability-shell {
+        width: min(1320px, 100% - 2rem);
+    }
+
+.traceability-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2.5rem 1.5rem;
+    }
+    }

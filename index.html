@@ -1,403 +1,532 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home Page</title>
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+        <!-- Bootstrap CSS -->
+        <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous"
+        />
 
-    <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="css/global.css" />
-  </head>
-  <body>
+        <!-- Estilos personalizados -->
+        <link rel="stylesheet" href="css/global.css" />
+    </head>
+    <body>
     <header class="site-header">
-      <div class="container-fluid header-shell">
-        <div class="brand-block">
-          <img class="brand-logo" src="resources/logo/LOGOTIPO.webp" alt="Mein Logistics" />
-        </div>
+        <div class="container-fluid header-shell">
+            <div class="brand-block">
+            <img class="brand-logo" src="resources/logo/LOGOTIPO.webp" alt="Mein Logistics" />
+            </div>
 
-        <nav class="main-nav" aria-label="Navegacion principal">
-          <a href="#" class="nav-link is-active">INICIO</a>
-          <a href="#" class="nav-link">NOSOTROS</a>
-          <a href="#" class="nav-link">SERVICIOS</a>
-          <a href="#" class="nav-link">VERTICALES</a>
-          <a href="#" class="nav-link">CONTACTO</a>
-        </nav>
+            <nav class="main-nav" aria-label="Navegacion principal">
+                <a href="#" class="nav-link is-active">INICIO</a>
+                <a href="#" class="nav-link">NOSOTROS</a>
+                <a href="#" class="nav-link">SERVICIOS</a>
+                <a href="#" class="nav-link">VERTICALES</a>
+                <a href="#" class="nav-link">CONTACTO</a>
+            </nav>
 
-        <div class="locale-tools" aria-label="Pais e idioma">
-          <span class="locale-country">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <circle cx="12" cy="12" r="9"></circle>
-              <path d="M3.6 9h16.8"></path>
-              <path d="M3.6 15h16.8"></path>
-              <path d="M12 3a13.5 13.5 0 0 1 0 18"></path>
-              <path d="M12 3a13.5 13.5 0 0 0 0 18"></path>
-            </svg>
-            MEXICO
-          </span>
-          <button class="lang-btn" type="button" aria-label="Cambiar idioma">
-            ESP
-            <span class="lang-arrow" aria-hidden="true"></span>
-          </button>
+            <div class="locale-tools" aria-label="Pais e idioma">
+            <span class="locale-country">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M3.6 9h16.8"></path>
+                <path d="M3.6 15h16.8"></path>
+                <path d="M12 3a13.5 13.5 0 0 1 0 18"></path>
+                <path d="M12 3a13.5 13.5 0 0 0 0 18"></path>
+                </svg>
+                MEXICO
+            </span>
+            <button class="lang-btn" type="button" aria-label="Cambiar idioma">
+                ESP
+                <span class="lang-arrow" aria-hidden="true"></span>
+            </button>
+            </div>
         </div>
-      </div>
     </header>
 
     <div class="page-wrapper">
-      <main class="page-main" style="background: white;">
-        <section class="hero-section" aria-label="Hero principal">
-          <video class="hero-video" autoplay muted loop playsinline preload="metadata" tabindex="-1" aria-hidden="true">
-            <source src="resources/video1.mp4" type="video/mp4" />
-          </video>
-          <div class="hero-overlay-top" aria-hidden="true"></div>
-          <div class="hero-overlay-bottom" aria-hidden="true"></div>
-          <!-- <img class="hero-video" src="resources/hero/FOTOGRAFIA.webp" alt="Vista aerea de camiones en carretera" aria-hidden="true" /> -->
+        <main class="page-main" style="background: white;">
+            <section class="hero-section" aria-label="Hero principal">
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata" tabindex="-1" aria-hidden="true">
+                <source src="resources/video1.mp4" type="video/mp4" />
+            </video>
+            <div class="hero-overlay-top" aria-hidden="true"></div>
+            <div class="hero-overlay-bottom" aria-hidden="true"></div>
+            <!-- <img class="hero-video" src="resources/hero/FOTOGRAFIA.webp" alt="Vista aerea de camiones en carretera" aria-hidden="true" /> -->
 
-          <div class="hero-content">
-            <h1 class="hero-title">Expertos Logísticos</h1>
-            <p class="hero-text">Servicios de Freight Management, Warehousing y Control Tower Excelencia Operativa &amp; Solida Red Multidisciplinaria</p>
-            <div class="hero-actions">
-              <a href="#" class="hero-btn hero-btn-primary">Servicios<svg class="hero-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 7h10v10M17 7L7 17" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              <a href="#" class="hero-btn hero-btn-outline">Cotizar</a>
-            </div>
-          </div>
-
-          <div class="stats-bar">
-            <div class="stat-item">
-              <div class="stat-number" data-target="36" data-prefix="+">0</div>
-              <div class="stat-label">Años de <br> servicio</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" data-target="2500" data-prefix="+">0</div>
-              <div class="stat-label">Rutas que operamos</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" data-target="16" data-prefix="+">0</div>
-              <div class="stat-label">Tipos de transporte</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" data-target="5">0</div>
-              <div class="stat-label">Tipos de mercancía</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" data-target="6">0</div>
-              <div class="stat-label">Mercancías verticales</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" data-target="98" data-prefix="" data-suffix="%">0</div>
-              <div class="stat-label">Efectividad de Cumplimiento</div>
-            </div>
-          </div>
-        </section>
-
-        <section class="innovation-section" aria-label="Innovacion">
-          <div class="innovation-shell">
-            <div class="innovation-intro">
-              <h2 class="innovation-kicker">INNOVACIÓN</h2>
-              <p class="innovation-title">Contribuimos al crecimiento de nuestros clientes</p>
-              <p class="innovation-text">
-                Basados en un profundo conocimiento operativo y una solida red multidisciplinaria, Mein Logistics ofrece soluciones diferenciadas enfocadas en proyectos de ahorro innovadores. Nuestro acercamiento para comprender a detalle las necesidades de nuestros clientes nos permite diseñar las mejores soluciones a la medida para una relación sustentable a largo plazo.
-              </p>
-              <a href="#" class="innovation-btn">Nosotros</a>
-            </div>
-
-            <div class="innovation-accordion accordion" id="innovationAccordion" role="list">
-              <article class="innovation-item accordion-item" role="listitem">
-                <h3 class="innovation-heading accordion-header" id="innovationHeading01">
-                  <button class="innovation-trigger accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#innovationCollapse01" aria-expanded="true" aria-controls="innovationCollapse01">
-                    <span class="innovation-index">01</span>
-                    <span class="innovation-item-title">Identificación &amp; Ejecución de Proyectos de Ahorro</span>
-                    <span class="innovation-icon innovation-icon-open" aria-hidden="true">-</span>
-                    <span class="innovation-icon innovation-icon-closed" aria-hidden="true">+</span>
-                  </button>
-                </h3>
-                <div id="innovationCollapse01" class="innovation-panel accordion-collapse collapse show" aria-labelledby="innovationHeading01" data-bs-parent="#innovationAccordion">
-                  <div class="innovation-panel-inner accordion-body">
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.</p>
-                  </div>
+            <div class="hero-content">
+                <h1 class="hero-title">Expertos Logísticos</h1>
+                <p class="hero-text">Servicios de Freight Management, Warehousing y Control Tower Excelencia Operativa &amp; Solida Red Multidisciplinaria</p>
+                <div class="hero-actions">
+                <a href="#" class="hero-btn hero-btn-primary">Servicios<svg class="hero-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 7h10v10M17 7L7 17" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <a href="#" class="hero-btn hero-btn-outline">Cotizar</a>
                 </div>
-              </article>
-
-              <article class="innovation-item accordion-item" role="listitem">
-                <h3 class="innovation-heading accordion-header" id="innovationHeading02">
-                  <button class="innovation-trigger accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#innovationCollapse02" aria-expanded="false" aria-controls="innovationCollapse02">
-                    <span class="innovation-index">02</span>
-                    <span class="innovation-item-title">Aseguramiento del OnTime</span>
-                    <span class="innovation-icon innovation-icon-open" aria-hidden="true">-</span>
-                    <span class="innovation-icon innovation-icon-closed" aria-hidden="true">+</span>
-                  </button>
-                </h3>
-                <div id="innovationCollapse02" class="innovation-panel accordion-collapse collapse" aria-labelledby="innovationHeading02" data-bs-parent="#innovationAccordion">
-                  <div class="innovation-panel-inner accordion-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam mumny nibh euismod tincidunt ut laoreet dolore magna.</p>
-                  </div>
-                </div>
-              </article>
-
-              <article class="innovation-item accordion-item" role="listitem">
-                <h3 class="innovation-heading accordion-header" id="innovationHeading03">
-                  <button class="innovation-trigger accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#innovationCollapse03" aria-expanded="false" aria-controls="innovationCollapse03">
-                    <span class="innovation-index">03</span>
-                    <span class="innovation-item-title">Cumplimiento de Capacidades</span>
-                    <span class="innovation-icon innovation-icon-open" aria-hidden="true">-</span>
-                    <span class="innovation-icon innovation-icon-closed" aria-hidden="true">+</span>
-                  </button>
-                </h3>
-                <div id="innovationCollapse03" class="innovation-panel accordion-collapse collapse" aria-labelledby="innovationHeading03" data-bs-parent="#innovationAccordion">
-                  <div class="innovation-panel-inner accordion-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam mumny nibh euismod tincidunt ut laoreet dolore magna.</p>
-                  </div>
-                </div>
-              </article>
-
-              <article class="innovation-item accordion-item" role="listitem">
-                <h3 class="innovation-heading accordion-header" id="innovationHeading04">
-                  <button class="innovation-trigger accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#innovationCollapse04" aria-expanded="false" aria-controls="innovationCollapse04">
-                    <span class="innovation-index">04</span>
-                    <span class="innovation-item-title">Visibilidad &amp; Trazabilidad Permanente</span>
-                    <span class="innovation-icon innovation-icon-open" aria-hidden="true">-</span>
-                    <span class="innovation-icon innovation-icon-closed" aria-hidden="true">+</span>
-                  </button>
-                </h3>
-                <div id="innovationCollapse04" class="innovation-panel accordion-collapse collapse" aria-labelledby="innovationHeading04" data-bs-parent="#innovationAccordion">
-                  <div class="innovation-panel-inner accordion-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam mumny nibh euismod tincidunt ut laoreet dolore magna.</p>
-                  </div>
-                </div>
-              </article>
-
-              <article class="innovation-item accordion-item" role="listitem">
-                <h3 class="innovation-heading accordion-header" id="innovationHeading05">
-                  <button class="innovation-trigger accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#innovationCollapse05" aria-expanded="false" aria-controls="innovationCollapse05">
-                    <span class="innovation-index">05</span>
-                    <span class="innovation-item-title">Cumplimiento Normativo y Regulatorio</span>
-                    <span class="innovation-icon innovation-icon-open" aria-hidden="true">-</span>
-                    <span class="innovation-icon innovation-icon-closed" aria-hidden="true">+</span>
-                  </button>
-                </h3>
-                <div id="innovationCollapse05" class="innovation-panel accordion-collapse collapse" aria-labelledby="innovationHeading05" data-bs-parent="#innovationAccordion">
-                  <div class="innovation-panel-inner accordion-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam mumny nibh euismod tincidunt ut laoreet dolore magna.</p>
-                  </div>
-                </div>
-              </article>
-
-              <article class="innovation-item accordion-item" role="listitem">
-                <h3 class="innovation-heading accordion-header" id="innovationHeading06">
-                  <button class="innovation-trigger accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#innovationCollapse06" aria-expanded="false" aria-controls="innovationCollapse06">
-                    <span class="innovation-index">06</span>
-                    <span class="innovation-item-title">Análisis Frecuencial de Performance</span>
-                    <span class="innovation-icon innovation-icon-open" aria-hidden="true">-</span>
-                    <span class="innovation-icon innovation-icon-closed" aria-hidden="true">+</span>
-                  </button>
-                </h3>
-                <div id="innovationCollapse06" class="innovation-panel accordion-collapse collapse" aria-labelledby="innovationHeading06" data-bs-parent="#innovationAccordion">
-                  <div class="innovation-panel-inner accordion-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam mumny nibh euismod tincidunt ut laoreet dolore magna.</p>
-                  </div>
-                </div>
-              </article>
             </div>
-          </div>
-        </section>
 
-        <!-- Sección de verticales -->
-        <section class="cargo-tech-section" aria-label="Tarjeta de Mercancia">
-          <div class="cargo-tech-shell">
-            <header class="cargo-tech-header">
-              <h2 class="cargo-kicker">VERTICALES</h2>
-              <p class="cargo-subtitle">Servicios diferenciados por sector</p>
-              <p class="cargo-lead">
-                Cada mercado enfrenta retos logísticos únicos, hemos desarrollado divisiones especializadas con expertos dedicados a optimizar la cadena de suministro de los sectores más exigentes del mercado, nuestra experiencia operativa nos permite ofrecer eficiencia, cumplimiento normativo y visibilidad total. 
-              </p>
-            </header>
+            <div class="stats-bar">
+                <div class="stat-item">
+                <div class="stat-number" data-target="36" data-prefix="+">0</div>
+                <div class="stat-label">Años de <br> servicio</div>
+                </div>
+                <div class="stat-item">
+                <div class="stat-number" data-target="2500" data-prefix="+">0</div>
+                <div class="stat-label">Rutas que operamos</div>
+                </div>
+                <div class="stat-item">
+                <div class="stat-number" data-target="16" data-prefix="+">0</div>
+                <div class="stat-label">Tipos de transporte</div>
+                </div>
+                <div class="stat-item">
+                <div class="stat-number" data-target="5">0</div>
+                <div class="stat-label">Tipos de mercancía</div>
+                </div>
+                <div class="stat-item">
+                <div class="stat-number" data-target="6">0</div>
+                <div class="stat-label">Mercancías verticales</div>
+                </div>
+                <div class="stat-item">
+                <div class="stat-number" data-target="98" data-prefix="" data-suffix="%">0</div>
+                <div class="stat-label">Efectividad de Cumplimiento</div>
+                </div>
+            </div>
+            </section>
 
-            <article class="cargo-tech-card" id="cargoCarousel" aria-roledescription="carrusel" aria-label="Verticales">
-              <div class="cargo-media-wrap">
-                <img
-                  class="cargo-media"
-                  id="cargoMedia"
-                  src="./resources/notch/consumption.webp"
-                  alt="Pasillo de supermercado"
-                />
-              </div>
-
-              <div class="cargo-content">
-                <div class="cargo-content-main">
-                  <h3 class="cargo-item-title" id="cargoItemTitle">Consumo</h3>
-                  <p class="cargo-description" id="cargoDescription1" style="font-weight: bold;">
-                    Atendemos al sector de consumo garantizando cadenas de suministro agiles, seguras y altamente eficientes.
-                  </p>
-                  <p class="cargo-description" id="cargoDescription2">
-                    Gestionamos el movimiento de productos terminados, bienes de uso diario y mercancia de alta rotacion,
-                    asegurando entregas puntuales y una operacion flexible que se adapta a picos de demanda y temporadas.
-                  </p>
-                  <a href="#" class="cargo-btn" id="cargoBtn">Conoce nuestras soluciones</a>
+            <section class="innovation-section" aria-label="Innovacion">
+            <div class="innovation-shell">
+                <div class="innovation-intro">
+                <h2 class="innovation-kicker">INNOVACIÓN</h2>
+                <p class="innovation-title">Contribuimos al crecimiento de nuestros clientes</p>
+                <p class="innovation-text">
+                    Basados en un profundo conocimiento operativo y una solida red multidisciplinaria, Mein Logistics ofrece soluciones diferenciadas enfocadas en proyectos de ahorro innovadores. Nuestro acercamiento para comprender a detalle las necesidades de nuestros clientes nos permite diseñar las mejores soluciones a la medida para una relación sustentable a largo plazo.
+                </p>
+                <a href="#" class="innovation-btn">Nosotros</a>
                 </div>
 
-                <aside class="cargo-stepper" aria-label="Indicador de verticales">
-                  <span class="cargo-step-top" id="cargoStepCurrent">01</span>
-                  <span class="cargo-step-line" aria-hidden="true"></span>
-                  <span class="cargo-step-bottom">06</span>
-                </aside>
-              </div>
-            </article>
-            <br>
-          </div>
-        </section>
+                <div class="innovation-accordion accordion" id="innovationAccordion" role="list">
+                <article class="innovation-item accordion-item" role="listitem">
+                    <h3 class="innovation-heading accordion-header" id="innovationHeading01">
+                    <button class="innovation-trigger accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#innovationCollapse01" aria-expanded="true" aria-controls="innovationCollapse01">
+                        <span class="innovation-index">01</span>
+                        <span class="innovation-item-title">Identificación &amp; Ejecución de Proyectos de Ahorro</span>
+                        <span class="innovation-icon innovation-icon-open" aria-hidden="true">-</span>
+                        <span class="innovation-icon innovation-icon-closed" aria-hidden="true">+</span>
+                    </button>
+                    </h3>
+                    <div id="innovationCollapse01" class="innovation-panel accordion-collapse collapse show" aria-labelledby="innovationHeading01" data-bs-parent="#innovationAccordion">
+                    <div class="innovation-panel-inner accordion-body">
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.</p>
+                    </div>
+                    </div>
+                </article>
 
-        <section class="logistics-gallery-section" aria-label="Galeria de servicios logisticos">
-          <div class="logistics-gallery-shell">
-            <div class="service-card service-card--1 service-card--solid">
-              <div class="service-solid-content">
-                <h3 class="service-titulo">MERCANCÍA</h3>
-                <p class="service-subtitulo">Soluciones especializadas para cada tipo</p>
-                <p class="service-texto">Cada mercado enfrenta retos logísticos únicos, hemos desarrollado divisiones especializadas con expertos dedicados a optimizar la cadena de suministro de los sectores más exigentes del mercado, nuestra experiencia operativa nos permite ofrecer eficiencia, cumplimiento normativo y visibilidad total.</p>
+                <article class="innovation-item accordion-item" role="listitem">
+                    <h3 class="innovation-heading accordion-header" id="innovationHeading02">
+                    <button class="innovation-trigger accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#innovationCollapse02" aria-expanded="false" aria-controls="innovationCollapse02">
+                        <span class="innovation-index">02</span>
+                        <span class="innovation-item-title">Aseguramiento del OnTime</span>
+                        <span class="innovation-icon innovation-icon-open" aria-hidden="true">-</span>
+                        <span class="innovation-icon innovation-icon-closed" aria-hidden="true">+</span>
+                    </button>
+                    </h3>
+                    <div id="innovationCollapse02" class="innovation-panel accordion-collapse collapse" aria-labelledby="innovationHeading02" data-bs-parent="#innovationAccordion">
+                    <div class="innovation-panel-inner accordion-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam mumny nibh euismod tincidunt ut laoreet dolore magna.</p>
+                    </div>
+                    </div>
+                </article>
+
+                <article class="innovation-item accordion-item" role="listitem">
+                    <h3 class="innovation-heading accordion-header" id="innovationHeading03">
+                    <button class="innovation-trigger accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#innovationCollapse03" aria-expanded="false" aria-controls="innovationCollapse03">
+                        <span class="innovation-index">03</span>
+                        <span class="innovation-item-title">Cumplimiento de Capacidades</span>
+                        <span class="innovation-icon innovation-icon-open" aria-hidden="true">-</span>
+                        <span class="innovation-icon innovation-icon-closed" aria-hidden="true">+</span>
+                    </button>
+                    </h3>
+                    <div id="innovationCollapse03" class="innovation-panel accordion-collapse collapse" aria-labelledby="innovationHeading03" data-bs-parent="#innovationAccordion">
+                    <div class="innovation-panel-inner accordion-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam mumny nibh euismod tincidunt ut laoreet dolore magna.</p>
+                    </div>
+                    </div>
+                </article>
+
+                <article class="innovation-item accordion-item" role="listitem">
+                    <h3 class="innovation-heading accordion-header" id="innovationHeading04">
+                    <button class="innovation-trigger accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#innovationCollapse04" aria-expanded="false" aria-controls="innovationCollapse04">
+                        <span class="innovation-index">04</span>
+                        <span class="innovation-item-title">Visibilidad &amp; Trazabilidad Permanente</span>
+                        <span class="innovation-icon innovation-icon-open" aria-hidden="true">-</span>
+                        <span class="innovation-icon innovation-icon-closed" aria-hidden="true">+</span>
+                    </button>
+                    </h3>
+                    <div id="innovationCollapse04" class="innovation-panel accordion-collapse collapse" aria-labelledby="innovationHeading04" data-bs-parent="#innovationAccordion">
+                    <div class="innovation-panel-inner accordion-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam mumny nibh euismod tincidunt ut laoreet dolore magna.</p>
+                    </div>
+                    </div>
+                </article>
+
+                <article class="innovation-item accordion-item" role="listitem">
+                    <h3 class="innovation-heading accordion-header" id="innovationHeading05">
+                    <button class="innovation-trigger accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#innovationCollapse05" aria-expanded="false" aria-controls="innovationCollapse05">
+                        <span class="innovation-index">05</span>
+                        <span class="innovation-item-title">Cumplimiento Normativo y Regulatorio</span>
+                        <span class="innovation-icon innovation-icon-open" aria-hidden="true">-</span>
+                        <span class="innovation-icon innovation-icon-closed" aria-hidden="true">+</span>
+                    </button>
+                    </h3>
+                    <div id="innovationCollapse05" class="innovation-panel accordion-collapse collapse" aria-labelledby="innovationHeading05" data-bs-parent="#innovationAccordion">
+                    <div class="innovation-panel-inner accordion-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam mumny nibh euismod tincidunt ut laoreet dolore magna.</p>
+                    </div>
+                    </div>
+                </article>
+
+                <article class="innovation-item accordion-item" role="listitem">
+                    <h3 class="innovation-heading accordion-header" id="innovationHeading06">
+                    <button class="innovation-trigger accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#innovationCollapse06" aria-expanded="false" aria-controls="innovationCollapse06">
+                        <span class="innovation-index">06</span>
+                        <span class="innovation-item-title">Análisis Frecuencial de Performance</span>
+                        <span class="innovation-icon innovation-icon-open" aria-hidden="true">-</span>
+                        <span class="innovation-icon innovation-icon-closed" aria-hidden="true">+</span>
+                    </button>
+                    </h3>
+                    <div id="innovationCollapse06" class="innovation-panel accordion-collapse collapse" aria-labelledby="innovationHeading06" data-bs-parent="#innovationAccordion">
+                    <div class="innovation-panel-inner accordion-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam mumny nibh euismod tincidunt ut laoreet dolore magna.</p>
+                    </div>
+                    </div>
+                </article>
+                </div>
+            </div>
+            </section>
+
+            <!-- Sección de verticales -->
+            <section class="cargo-tech-section" aria-label="Tarjeta de Mercancia">
+            <div class="cargo-tech-shell">
+                <header class="cargo-tech-header">
+                <h2 class="cargo-kicker">VERTICALES</h2>
+                <p class="cargo-subtitle">Servicios diferenciados por sector</p>
+                <p class="cargo-lead">
+                    Cada mercado enfrenta retos logísticos únicos, hemos desarrollado divisiones especializadas con expertos dedicados a optimizar la cadena de suministro de los sectores más exigentes del mercado, nuestra experiencia operativa nos permite ofrecer eficiencia, cumplimiento normativo y visibilidad total. 
+                </p>
+                </header>
+
+                <article class="cargo-tech-card" id="cargoCarousel" aria-roledescription="carrusel" aria-label="Verticales">
+                <div class="cargo-media-wrap">
+                    <img
+                    class="cargo-media"
+                    id="cargoMedia"
+                    src="./resources/notch/consumption.webp"
+                    alt="Pasillo de supermercado"
+                    />
+                </div>
+
+                <div class="cargo-content">
+                    <div class="cargo-content-main">
+                    <h3 class="cargo-item-title" id="cargoItemTitle">Consumo</h3>
+                    <p class="cargo-description" id="cargoDescription1" style="font-weight: bold;">
+                        Atendemos al sector de consumo garantizando cadenas de suministro agiles, seguras y altamente eficientes.
+                    </p>
+                    <p class="cargo-description" id="cargoDescription2">
+                        Gestionamos el movimiento de productos terminados, bienes de uso diario y mercancia de alta rotacion,
+                        asegurando entregas puntuales y una operacion flexible que se adapta a picos de demanda y temporadas.
+                    </p>
+                    <a href="#" class="cargo-btn" id="cargoBtn">Conoce nuestras soluciones</a>
+                    </div>
+
+                    <aside class="cargo-stepper" aria-label="Indicador de verticales">
+                    <span class="cargo-step-top" id="cargoStepCurrent">01</span>
+                    <span class="cargo-step-line" aria-hidden="true"></span>
+                    <span class="cargo-step-bottom">06</span>
+                    </aside>
+                </div>
+                </article>
                 <br>
-                <a href="#" class="hero-btn hero-btn-primary" style="background-color: var(--color7);">Servicios<svg class="hero-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 7h10v10M17 7L7 17" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              </div>
             </div>
+            </section>
 
-            <div class="service-card service-card--2 service-card--image">
-              <img
-                src="./resources/services/foto_2.webp"
-                alt="Transporte de carga especializada"
-              />
-              <div class="overlay" aria-hidden="true"></div>
-              <div class="texto-hover">
-                <h3 class="service-titulo">Hazmat</h3>
-                <p class="service-subtitulo">Sustancias peligrosas</p>
-                <p class="service-texto">Logística de sustancias peligrosas. Un sistema que combina tecnología, protocolos de seguridad y personal capacitado para reducir riesgos al mínimo.</p>
-              </div>
+            <section class="logistics-gallery-section" aria-label="Galeria de servicios logisticos">
+            <div class="logistics-gallery-shell">
+                <div class="service-card service-card--1 service-card--solid">
+                <div class="service-solid-content">
+                    <h3 class="service-titulo">MERCANCÍA</h3>
+                    <p class="service-subtitulo">Soluciones especializadas para cada tipo</p>
+                    <p class="service-texto">Cada mercado enfrenta retos logísticos únicos, hemos desarrollado divisiones especializadas con expertos dedicados a optimizar la cadena de suministro de los sectores más exigentes del mercado, nuestra experiencia operativa nos permite ofrecer eficiencia, cumplimiento normativo y visibilidad total.</p>
+                    <br>
+                    <a href="#" class="hero-btn hero-btn-primary" style="background-color: var(--color7);">Servicios<svg class="hero-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 7h10v10M17 7L7 17" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                </div>
+                </div>
+
+                <div class="service-card service-card--2 service-card--image">
+                <img
+                    src="./resources/services/foto_2.webp"
+                    alt="Transporte de carga especializada"
+                />
+                <div class="overlay" aria-hidden="true"></div>
+                <div class="texto-hover">
+                    <h3 class="service-titulo">Hazmat</h3>
+                    <p class="service-subtitulo">Sustancias peligrosas</p>
+                    <p class="service-texto">Logística de sustancias peligrosas. Un sistema que combina tecnología, protocolos de seguridad y personal capacitado para reducir riesgos al mínimo.</p>
+                </div>
+                </div>
+
+                <div class="service-card service-card--3 service-card--image">
+                <img
+                    src="./resources/services/foto_4.webp"
+                    alt="Operador en zona de carga"
+                />
+                <div class="overlay" aria-hidden="true"></div>
+                <div class="texto-hover">
+                    <h3 class="service-titulo">Control Tower</h3>
+                    <p class="service-subtitulo">Visibilidad operativa</p>
+                    <p class="service-texto">Monitoreo en tiempo real y visibilidad end-to-end de la cadena de suministro.</p>
+                </div>
+                </div>
+
+                <div class="service-card service-card--4 service-card--image">
+                <img
+                    src="./resources/services/foto_3.webp"
+                    alt="Camion cisterna en ruta"
+                />
+                <div class="overlay" aria-hidden="true"></div>
+                <div class="texto-hover">
+                    <h3 class="service-titulo">Transporte Dedicado</h3>
+                    <p class="service-subtitulo">Flota asignada</p>
+                    <p class="service-texto">Flota asignada, trazabilidad total y cumplimiento de ventanas de entrega.</p>
+                </div>
+                </div>
+
+                <div class="service-card service-card--5 service-card--image">
+                <img
+                    src="./resources/services/foto_5.webp"
+                    alt="Bodega con estanterias y montacargas"
+                />
+                <div class="overlay" aria-hidden="true"></div>
+                <div class="texto-hover">
+                    <h3 class="service-titulo">Warehousing</h3>
+                    <p class="service-subtitulo">Almacenamiento flexible</p>
+                    <p class="service-texto">Infraestructura flexible para inventario, picking y preparacion de pedidos.</p>
+                </div>
+                </div>
+
+                <div class="service-card service-card--6 service-card--image">
+                <img
+                    src="./resources/services/foto_6.webp"
+                    alt="Unidad de carga en carretera"
+                />
+                <div class="overlay" aria-hidden="true"></div>
+                <div class="texto-hover">
+                    <h3 class="service-titulo">Freight Management</h3>
+                    <p class="service-subtitulo">Planeacion de rutas</p>
+                    <p class="service-texto">Planeacion de rutas y control operativo para entregas de alto cumplimiento.</p>
+                </div>
+                </div>
             </div>
+            </section>
 
-            <div class="service-card service-card--3 service-card--image">
-              <img
-                src="./resources/services/foto_4.webp"
-                alt="Operador en zona de carga"
-              />
-              <div class="overlay" aria-hidden="true"></div>
-              <div class="texto-hover">
-                <h3 class="service-titulo">Control Tower</h3>
-                <p class="service-subtitulo">Visibilidad operativa</p>
-                <p class="service-texto">Monitoreo en tiempo real y visibilidad end-to-end de la cadena de suministro.</p>
-              </div>
+            <section class="traceability-section" aria-label="Trazabilidad">
+            <div class="traceability-shell">
+                <br>
+                <header class="traceability-header">
+                <h2 class="traceability-kicker">TRAZABILIDAD</h2>
+                <p class="traceability-title">Control y Visibilidad Total</p>
+                <p class="traceability-text">
+                    En un entorno logístico que no se detiene, nuestra herramienta de trazabilidad le ofrece la certeza que su negocio necesita. Monitoree cada movimiento de su mercancía desde el origen hasta el destino final con actualizaciones precisas, historial completo del recorrido, paradas intermedias y estados de entrega.
+                </p>
+                </header>
+
+                <div class="traceability-grid" role="list" aria-label="Caracteristicas de trazabilidad">
+                <article class="trace-item" role="listitem">
+                    <img src="resources/traceability/icon_end_to_end.png" alt="End to End Tracking Tool">
+                    <span>End to End Tracking Tool</span>
+                </article>
+                <article class="trace-item" role="listitem">
+                    <img src="resources/traceability/icon_reports.png" alt="Reportes Personalizados">
+                    <span>Reportes Personalizados</span>
+                </article>
+                <article class="trace-item" role="listitem">
+                    <img src="resources/traceability/icon_follow-up.png" alt="Seguimiento de KPIs">
+                    <span>Seguimiento de KPIs</span>
+                </article>
+                <article class="trace-item" role="listitem">
+                    <img src="resources/traceability/icon_filters.png" alt="Filtros Inteligentes">
+                    <span>Filtros Inteligentes</span>
+                </article>
+                <article class="trace-item" role="listitem">
+                    <img src="resources/traceability/icon_scheme.png" alt="Seguimiento">
+                    <span>Esquema de Seguridad</span>
+                </article>
+                <article class="trace-item" role="listitem">
+                    <img src="resources/traceability/icon_profiles.png" alt="Transporte">
+                    <span>Perfiles Personalizados</span>
+                </article>
+                <article class="trace-item" role="listitem">
+                    <img src="resources/traceability/icon_integration.png" alt="Etiquetado">
+                    <span>Integración Multicanal</span>
+                </article>
+                <article class="trace-item" role="listitem">
+                    <img src="resources/traceability/icon_programming.png" alt="Evidencias">
+                    <span>Programación de Reportes</span>
+                </article>
+                <article class="trace-item" role="listitem">
+                    <img src="resources/traceability/icon_sharepoint.png" alt="Alertas">
+                    <span>SharePoint para Facturas &amp; PODs
+                    </span>
+                </article>
+                <article class="trace-item" role="listitem">
+                    <img src="resources/traceability/icon_visibility.png" alt="Kpis">
+                    <span>Visibilidad de Inventarios</span>
+                </article>
+                </div>
             </div>
+                <br>
+                <br>
+                <br>
+            </section>
 
-            <div class="service-card service-card--4 service-card--image">
-              <img
-                src="./resources/services/foto_3.webp"
-                alt="Camion cisterna en ruta"
-              />
-              <div class="overlay" aria-hidden="true"></div>
-              <div class="texto-hover">
-                <h3 class="service-titulo">Transporte Dedicado</h3>
-                <p class="service-subtitulo">Flota asignada</p>
-                <p class="service-texto">Flota asignada, trazabilidad total y cumplimiento de ventanas de entrega.</p>
-              </div>
+            <section class="security-section" aria-label="Seguridad">
+            <div class="security-overlay"></div>
+
+            <div class="security-content">
+                <br>
+                <br>
+                <article class="security-card security-card--intro" aria-label="Resumen de seguridad">
+                <p class="security-kicker">SEGURIDAD</p>
+                <h3 class="security-title">Nuestra Prioridad</h3>
+                <p class="security-text">
+                    La seguridad logística ha evolucionado de ser una medida reactiva a una estrategia integral proactiva, impulsada por la inteligencia artificial y la ciberseguridad avanzada para proteger la integridad de toda la cadena de suministro.
+                </p>
+                <a href="#" class="security-btn">Cotizar</a>
+                </article>
+
+                <article class="security-card security-card--list" aria-label="Lista de controles de seguridad">
+                <h4 class="security-list-title">Controles Clave</h4>
+                <ul class="security-list" role="list">
+                    <li>Centro de Monitoreo Externo 24/7</li>
+                    <li>Centro de Monitoreo Externo 24/7</li>
+                    <li>Centro de Monitoreo Externo 24/7</li>
+                    <li>Centro de Monitoreo Externo 24/7</li>
+                    <li>Centro de Monitoreo Externo 24/7</li>
+                    <li>Centro de Monitoreo Externo 24/7</li>
+                    <li>Centro de Monitoreo Externo 24/7</li>
+                    <li>Centro de Monitoreo Externo 24/7</li>
+                </ul>
+                </article>
+                <br>
+                <br>
             </div>
+            </section>
 
-            <div class="service-card service-card--5 service-card--image">
-              <img
-                src="./resources/services/foto_5.webp"
-                alt="Bodega con estanterias y montacargas"
-              />
-              <div class="overlay" aria-hidden="true"></div>
-              <div class="texto-hover">
-                <h3 class="service-titulo">Warehousing</h3>
-                <p class="service-subtitulo">Almacenamiento flexible</p>
-                <p class="service-texto">Infraestructura flexible para inventario, picking y preparacion de pedidos.</p>
-              </div>
-            </div>
+            <section class="performance-section" aria-label="Performance">
+                <div class="performance-shell">
+                    <article class="performance-card performance-card--text" aria-label="Informacion de performance">
+                        <p class="performance-kicker">PERFORMANCE</p>
+                        <h3 class="performance-title">Análisis y amplio Portafolio de KPIs</h3>
+                        <p class="performance-text">
+                            El análisis de indicadores clave de desempeño se ha transformado en una disciplina predictiva impulsada por el análisis de datos a gran escala. 
+                        </p>
+                        <p class="performance-text">
+                            Medición en tiempo real de y anticipación de escenarios futuros para optimizar la cadena de suministro. Informes detallados para cada inprocess incluyendo recomendaciones accionables inmediatas para reducir costos operativos. Nuestro portafolio de KPIs abarca desde la planeación de la carga hasta el termino de su ciclo administrativo.
+                        </p>
+                    </article>
 
-            <div class="service-card service-card--6 service-card--image">
-              <img
-                src="./resources/services/foto_6.webp"
-                alt="Unidad de carga en carretera"
-              />
-              <div class="overlay" aria-hidden="true"></div>
-              <div class="texto-hover">
-                <h3 class="service-titulo">Freight Management</h3>
-                <p class="service-subtitulo">Planeacion de rutas</p>
-                <p class="service-texto">Planeacion de rutas y control operativo para entregas de alto cumplimiento.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+                    <article class="performance-cardd performance-card--checks" aria-label="Lista de KPIs de performance">
+                        <ul class="performance-check-list" role="list">
+                            <li><span class="check-icon" aria-hidden="true">✓</span><span>On-Time por In-Process</span></li>
+                            <li><span class="check-icon" aria-hidden="true">✓</span><span>Logistica Inversa</span></li>
+                            <li><span class="check-icon" aria-hidden="true">✓</span><span>Recuperación de PODs</span></li>
+                            <li><span class="check-icon" aria-hidden="true">✓</span><span>Cumplimiento de Capacidades</span></li>
+                            <li><span class="check-icon" aria-hidden="true">✓</span><span>Entrega de Cotizaciones</span></li>
+                            <li><span class="check-icon" aria-hidden="true">✓</span><span>Hit Rate</span></li>
+                            <li><span class="check-icon" aria-hidden="true">✓</span><span>Integración Multicanal</span></li>
+                            <li><span class="check-icon" aria-hidden="true">✓</span><span>Lead Times</span></li>
+                            <li><span class="check-icon" aria-hidden="true">✓</span><span>Vehicle Fill</span></li>
+                            <li><span class="check-icon" aria-hidden="true">✓</span><span>Savings</span></li>
+                        </ul>
+                    </article>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+            </section>
 
-        
-      </main>
+            <section class="infrastructure-section" aria-label="Infraestructura">
+                <div class="infrastructure-overlay"></div>
+                <div class="infrastructure-shell">
+                    <p class="infrastructure-text">Infraestructura inteligente, conectando mercados en tiempo real.</p>
+                </div>
+            </section>
 
-      <footer class="site-footer">
-        <div class="container footer-shell">
-          <section class="footer-col footer-brand-col" aria-label="Informacion de marca">
-            <div class="footer-brand-row">
-              <span class="brand-mark" aria-hidden="true"></span>
-              <div class="brand-text-wrap">
-                <strong class="brand-text">MEIN</strong>
-                <span class="brand-subtext">LOGISTICS</span>
-              </div>
-            </div>
+        </main>
 
-            <p class="footer-meta">
-              Copyright &copy; 2026 Mein Logistics
-              <a href="#" class="footer-inline-link">Aviso de Privacidad</a>
-            </p>
-            <p class="footer-address">Insurgentes Sur No. 700, Piso 9 Col. Del Valle C.P. 03100, CDMX</p>
-          </section>
+        <footer class="site-footer">
+            <div class="container footer-shell">
+            <section class="footer-col footer-brand-col" aria-label="Informacion de marca">
+                <div class="footer-brand-row">
+                <img class="brand-logo" src="resources/logo/LOGOTIPO.webp" alt="Mein Logistics" />
+                </div>
 
-          <section class="footer-col" aria-label="Menu del footer">
-            <h3 class="footer-title">MENU</h3>
-            <nav class="footer-nav">
-              <a href="#">Inicio</a>
-              <a href="#">Nosotros</a>
-              <a href="#">Servicios</a>
-              <a href="#">Verticales</a>
-              <a href="#">Contacto</a>
-            </nav>
-          </section>
+                <p class="footer-meta">
+                Copyright &copy; 2026 Mein Logistics
+                <a href="#" class="footer-inline-link">Aviso de Privacidad</a>
+                </p>
+                <p class="footer-address">Insurgentes Sur No. 700, Piso 9 Col. Del Valle C.P. 03100, CDMX</p>
+            </section>
 
-          <section class="footer-col" aria-label="Contacto">
-            <h3 class="footer-title">CONTACTO</h3>
-            <div class="footer-contact-list">
-              <a href="tel:+525589781010" class="footer-contact-item">
+            <section class="footer-col" aria-label="Menu del footer">
+                <h3 class="footer-title">MENU</h3>
+                <nav class="footer-nav">
+                    <a href="#">Inicio</a>
+                    <a href="#">Nosotros</a>
+                    <a href="#">Servicios</a>
+                    <a href="#">Verticales</a>
+                    <a href="#">Contacto</a>
+                </nav>
+            </section>
+
+            <section class="footer-col" aria-label="Contacto">
+                <h3 class="footer-title">CONTACTO</h3>
+                <div class="footer-contact-list">
+                <a href="tel:+525589781010" class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M6.7 10.8a15.2 15.2 0 0 0 6.5 6.5l2.2-2.2a1 1 0 0 1 1-.24 11.1 11.1 0 0 0 3.47.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.35a1 1 0 0 1 1 1 11.1 11.1 0 0 0 .56 3.47 1 1 0 0 1-.24 1z"/>
+                    </svg>
+                    +52 55 8978 1010
+                </a>
+                <a href="mailto:info@meinlogistics.com" class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm0 2 8 5 8-5"/>
+                    </svg>
+                    info@meinlogistics.com
+                </a>
+                </div>
+                <a href="#" class="footer-social" aria-label="LinkedIn">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path d="M6.7 10.8a15.2 15.2 0 0 0 6.5 6.5l2.2-2.2a1 1 0 0 1 1-.24 11.1 11.1 0 0 0 3.47.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.35a1 1 0 0 1 1 1 11.1 11.1 0 0 0 .56 3.47 1 1 0 0 1-.24 1z"/>
+                    <path d="M6.9 8.75a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6zM5.35 10h3.1v9h-3.1zm5.05 0h2.97v1.23h.04c.42-.78 1.42-1.6 2.92-1.6 3.12 0 3.7 2.05 3.7 4.72V19h-3.1v-4.13c0-.99-.02-2.26-1.37-2.26-1.37 0-1.58 1.08-1.58 2.19V19h-3.1z"/>
                 </svg>
-                +52 55 8978 1010
-              </a>
-              <a href="mailto:info@meinlogistics.com" class="footer-contact-item">
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm0 2 8 5 8-5"/>
-                </svg>
-                info@meinlogistics.com
-              </a>
+                </a>
+            </section>
             </div>
-            <a href="#" class="footer-social" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M6.9 8.75a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6zM5.35 10h3.1v9h-3.1zm5.05 0h2.97v1.23h.04c.42-.78 1.42-1.6 2.92-1.6 3.12 0 3.7 2.05 3.7 4.72V19h-3.1v-4.13c0-.99-.02-2.26-1.37-2.26-1.37 0-1.58 1.08-1.58 2.19V19h-3.1z"/>
-              </svg>
-            </a>
-          </section>
+        </footer>
         </div>
-      </footer>
-    </div>
 
-    <!-- Bootstrap JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+        <!-- Bootstrap JS -->
+        <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+        ></script>
 
-    <!-- Stats Counter Animation -->
-    <script src="js/animations.js"></script>
+        <!-- Stats Counter Animation -->
+        <script src="js/animations.js"></script>
   </body>
 </html>

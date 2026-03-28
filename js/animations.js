@@ -299,14 +299,52 @@ function initGalleryImageHoverSwap() {
   });
 }
 
+function initDynamicHeaderOffset() {
+  const root = document.documentElement;
+  const header = document.querySelector('.site-header');
+
+  if (!root || !header) {
+    return;
+  }
+
+  let rafId = null;
+
+  function applyOffset() {
+    const headerHeight = Math.ceil(header.getBoundingClientRect().height);
+    root.style.setProperty('--header-offset', `${headerHeight}px`);
+  }
+
+  function requestOffsetUpdate() {
+    if (rafId !== null) {
+      cancelAnimationFrame(rafId);
+    }
+
+    rafId = requestAnimationFrame(() => {
+      applyOffset();
+      rafId = null;
+    });
+  }
+
+  applyOffset();
+
+  window.addEventListener('resize', requestOffsetUpdate, { passive: true });
+  window.addEventListener('orientationchange', requestOffsetUpdate, { passive: true });
+
+  if (document.fonts && typeof document.fonts.ready?.then === 'function') {
+    document.fonts.ready.then(requestOffsetUpdate);
+  }
+}
+
 // Ejecutar cuando el DOM esté listo
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
+    initDynamicHeaderOffset();
     animateCounters();
     initCargoCarousel();
     initGalleryImageHoverSwap();
   });
 } else {
+  initDynamicHeaderOffset();
   animateCounters();
   initCargoCarousel();
   initGalleryImageHoverSwap();

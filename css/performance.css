@@ -1,0 +1,117 @@
+.performance-section {
+    width: 100%;
+    background: #f4f7f9;
+    padding: clamp(2.2rem, 4.5vw, 4rem) 0;
+    }
+
+.performance-shell {
+    width: min(1320px, 100% - 4rem);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: clamp(0.35rem, 1vw, 0.9rem);
+    align-items: stretch;
+    }
+
+.performance-card {
+    border-radius: 20px;
+    box-shadow: 0 14px 36px rgba(34, 53, 74, 0.1);
+        background-image: url("../resources/card.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+.performance-cardd {
+        border-radius: 20px;
+        box-shadow: 0 14px 36px rgba(34, 53, 74, 0.1);
+        background-color: white;
+    }
+
+.performance-card--text {
+    position: relative;
+    padding: 10%;
+    box-shadow: none;
+    }
+
+.performance-kicker {
+    margin: 0;
+    color: #0071bc;
+    font-size: clamp(1.05rem, 1.35vw, 1.35rem);
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    }
+
+.performance-title {
+    margin: 0.45rem 0 0;
+    color: #111318;
+    font-size: clamp(1.45rem, 2.4vw, 2rem);
+    line-height: 1.2;
+    font-weight: 600;
+    }
+
+.performance-text {
+    margin: 0.95rem 0 0;
+    color: #3f4a57;
+    font-size: clamp(0.92rem, 1.08vw, 1.03rem);
+    line-height: 1.72;
+    }
+
+.performance-card--checks {
+    padding: clamp(1.35rem, 2.2vw, 2rem) clamp(1.2rem, 2vw, 1.8rem);
+    }
+
+.performance-check-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.72rem;
+    }
+
+.performance-check-list li {
+    display: grid;
+    grid-template-columns: 1.3rem 1fr;
+    align-items: start;
+    column-gap: 0.55rem;
+    color: #0f1f34;
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    font-weight: 500;
+    line-height: 1.4;
+    }
+
+.performance-check-list .check-icon {
+    color: #44c7f4;
+    font-size: 1.05rem;
+    line-height: 1;
+    font-weight: 700;
+    margin-top: 0.05rem;
+    }
+
+@media (max-width: 1024px) {
+.performance-shell {
+        width: min(1320px, 100% - 2.4rem);
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+.performance-card--text {
+        clip-path: none;
+        filter: none;
+        border-bottom: 3px solid #dce7ef;
+    }
+    }
+
+@media (max-width: 640px) {
+.performance-section {
+        padding: 2rem 0;
+    }
+
+.performance-shell {
+        width: min(1320px, 100% - 1.5rem);
+    }
+
+.performance-card {
+        border-radius: 16px;
+    }
+}
