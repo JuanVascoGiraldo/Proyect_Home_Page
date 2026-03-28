@@ -182,7 +182,19 @@
         "card4"
         "card5"
         "card6";
-        grid-auto-rows: clamp(11.9rem, 57vw, 16.6rem);
+        grid-auto-rows: auto;
+    }
+
+.service-card--1 {
+        min-height: clamp(23rem, 92vw, 30rem);
+    }
+
+.service-card--2,
+.service-card--3,
+.service-card--4,
+.service-card--5,
+.service-card--6 {
+        min-height: clamp(11.9rem, 57vw, 16.6rem);
     }
 
 .service-solid-content .service-subtitulo,

@@ -1,5 +1,6 @@
 .performance-section {
     width: 100%;
+    margin-top: -5%;
     background: #f4f7f9;
     padding: clamp(2.2rem, 4.5vw, 4rem) 0;
     }
