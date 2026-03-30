@@ -58,50 +58,33 @@ function initCargoCarousel() {
     // cargoContent.focus({ preventScroll: true });
   }
 
-  const slides = [
+  const fallbackSlides = [
     {
       title: 'Consumo',
       image: './resources/notch/consumption.webp',
       alt: 'Pasillo de supermercado',
-      text1: 'Atendemos al sector de consumo garantizando cadenas de suministro ágiles, seguras y altamente eficientes.',
-      text2: 'Gestionamos el movimiento de productos terminados, bienes de uso diario y mercancía de alta rotación, asegurando entregas puntuales y una operación flexible que se adapta a picos de demanda y temporadas.'
-    },
-    {
-      title: 'Pharma',
-      image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Laboratorio farmaceutico',
-      text1: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.',
-      text2: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.'
-    },
-    {
-      title: 'Automotriz',
-      image: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Linea de produccion automotriz',
-      text1: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.',
-      text2: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.'
-    },
-    {
-      title: 'Retail',
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Centro de distribucion retail',
-      text1: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.',
-      text2: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.'
-    },
-    {
-      title: 'Tecnologia',
-      image: 'https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Componentes de tecnologia',
-      text1: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.',
-      text2: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.'
-    },
-    {
-      title: 'Aeroespacial',
-      image: 'https://images.unsplash.com/photo-1517976547714-720226b864c1?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Industria aeroespacial',
-      text1: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.',
-      text2: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam mumy nibh euismod tincidunt ut laoreet dolore magna.'
+      text1: 'Atendemos al sector de consumo garantizando cadenas de suministro agiles, seguras y altamente eficientes.',
+      text2: 'Gestionamos el movimiento de productos terminados, bienes de uso diario y mercancia de alta rotacion, asegurando entregas puntuales y una operacion flexible que se adapta a picos de demanda y temporadas.'
     }
   ];
+
+  function getLocalizedSlides() {
+    const lang = typeof window.getCurrentLanguage === 'function' ? window.getCurrentLanguage() : 'es';
+    const notchSection = window.pageTexts?.notch;
+    const localized = notchSection?.[lang]?.slides;
+    if (Array.isArray(localized) && localized.length > 0) {
+      return localized;
+    }
+
+    const defaultSlides = notchSection?.es?.slides;
+    if (Array.isArray(defaultSlides) && defaultSlides.length > 0) {
+      return defaultSlides;
+    }
+
+    return fallbackSlides;
+  }
+
+  let slides = getLocalizedSlides();
 
   const mediaRevealDuration = 460;
   const mediaSwapDelay = 270;
@@ -165,7 +148,8 @@ function initCargoCarousel() {
         description1.textContent = item.text1;
         description2.textContent = item.text2;
         stepCurrent.textContent = String(index + 1).padStart(2, '0');
-        const progress = (index / (slides.length - 1)) * 100;
+        const denominator = Math.max(slides.length - 1, 1);
+        const progress = (index / denominator) * 100;
         stepper.style.setProperty('--progress', `${progress}%`);
 
         media.classList.add('is-entering');
@@ -307,6 +291,15 @@ function initCargoCarousel() {
   }
 
   renderSlide(currentIndex);
+
+  window.addEventListener('app:language-change', () => {
+    slides = getLocalizedSlides();
+    if (currentIndex > slides.length - 1) {
+      currentIndex = slides.length - 1;
+    }
+
+    renderSlide(Math.max(currentIndex, 0));
+  });
 
   window.addEventListener('wheel', onWheel, { passive: false });
   window.addEventListener('keydown', onKeyDown, { passive: false });
