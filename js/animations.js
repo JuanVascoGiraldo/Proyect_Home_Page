@@ -38,6 +38,8 @@ function initCargoCarousel() {
   const stepper = document.querySelector('.cargo-stepper');
   const cargoContent = document.querySelector('.cargo-content');
   const contentMain = document.querySelector('.cargo-content-main');
+  const carouselCard = document.getElementById('cargoCarousel');
+  const mediaWrap = media.closest('.cargo-media-wrap');
 
   if (!section || !media || !title || !description1 || !description2 || !stepCurrent || !stepper || !cargoContent || !contentMain) {
     return;
@@ -101,33 +103,110 @@ function initCargoCarousel() {
     }
   ];
 
+  const mediaRevealDuration = 460;
+  const mediaSwapDelay = 270;
+
   let currentIndex = 0;
   let wheelLocked = false;
   let touchStartY = 0;
+  let centerLockActive = true;
+  let renderToken = 0;
+  let renderSwapTimeout = null;
+  let renderFinalizeTimeout = null;
+
+  function preloadImage(source) {
+    return new Promise((resolve) => {
+      const image = new Image();
+      image.onload = () => resolve(source);
+      image.onerror = () => resolve(source);
+      image.src = source;
+    });
+  }
+
+  function clearRenderTimers() {
+    if (renderSwapTimeout !== null) {
+      window.clearTimeout(renderSwapTimeout);
+      renderSwapTimeout = null;
+    }
+
+    if (renderFinalizeTimeout !== null) {
+      window.clearTimeout(renderFinalizeTimeout);
+      renderFinalizeTimeout = null;
+    }
+  }
 
   function renderSlide(index) {
+    const token = ++renderToken;
     const item = slides[index];
+
+    clearRenderTimers();
+    media.classList.remove('is-entering');
+    contentMain.classList.remove('is-entering');
     media.classList.add('is-changing');
     contentMain.classList.add('is-changing');
 
-    setTimeout(() => {
-      media.src = item.image;
-      media.alt = item.alt;
-      title.textContent = item.title;
-      description1.textContent = item.text1;
-      description2.textContent = item.text2;
-      stepCurrent.textContent = String(index + 1).padStart(2, '0');
-      const progress = (index / (slides.length - 1)) * 100;
-      stepper.style.setProperty('--progress', `${progress}%`);
-      media.classList.remove('is-changing');
-      contentMain.classList.remove('is-changing');
-    }, 120);
+    if (mediaWrap) {
+      mediaWrap.classList.add('is-changing');
+    }
+
+    preloadImage(item.image).then(() => {
+      if (token !== renderToken) {
+        return;
+      }
+
+      renderSwapTimeout = window.setTimeout(() => {
+        if (token !== renderToken) {
+          return;
+        }
+
+        media.src = item.image;
+        media.alt = item.alt;
+        title.textContent = item.title;
+        description1.textContent = item.text1;
+        description2.textContent = item.text2;
+        stepCurrent.textContent = String(index + 1).padStart(2, '0');
+        const progress = (index / (slides.length - 1)) * 100;
+        stepper.style.setProperty('--progress', `${progress}%`);
+
+        media.classList.add('is-entering');
+        contentMain.classList.add('is-entering');
+
+        renderFinalizeTimeout = window.setTimeout(() => {
+          if (token !== renderToken) {
+            return;
+          }
+
+          media.classList.remove('is-changing', 'is-entering');
+          contentMain.classList.remove('is-changing', 'is-entering');
+
+          if (mediaWrap) {
+            mediaWrap.classList.remove('is-changing');
+          }
+        }, mediaRevealDuration + 20);
+      }, mediaSwapDelay);
+    });
   }
 
-  function inSectionViewport() {
-    const rect = section.getBoundingClientRect();
+  function isSectionCentered() {
+    const focusTarget = carouselCard || cargoContent || section;
+    const rect = focusTarget.getBoundingClientRect();
     const vh = window.innerHeight || document.documentElement.clientHeight;
-    return rect.top <= vh * 0.35 && rect.bottom >= vh * 0.6;
+    const viewportCenter = vh / 2;
+    const targetCenter = rect.top + rect.height / 2;
+
+    // Histéresis: activa con un rango mas amplio y libera mas tarde.
+    // Evita perder el bloqueo cuando el usuario hace scroll rapido.
+    const enterTolerance = Math.max(110, vh * 0.2);
+    const exitTolerance = Math.max(170, vh * 0.3);
+    const tolerance = centerLockActive ? exitTolerance : enterTolerance;
+
+    const crossesViewportCenterLine = rect.top <= viewportCenter && rect.bottom >= viewportCenter;
+    const isCentered = Math.abs(targetCenter - viewportCenter) <= tolerance || crossesViewportCenterLine;
+    const hasEnoughVisibleArea = rect.top < vh * 0.9 && rect.bottom > vh * 0.1;
+
+    centerLockActive = isCentered && hasEnoughVisibleArea;
+
+    return centerLockActive;
   }
 
   function handleStep(direction) {
@@ -147,7 +226,7 @@ function initCargoCarousel() {
   }
 
   function onWheel(event) {
-    if (!inSectionViewport()) {
+    if (!isSectionCentered()) {
       return;
     }
 
@@ -170,7 +249,7 @@ function initCargoCarousel() {
   }
 
   function onKeyDown(event) {
-    if (!inSectionViewport()) {
+    if (!isSectionCentered()) {
       return;
     }
 
@@ -192,7 +271,7 @@ function initCargoCarousel() {
   }
 
   function onTouchMove(event) {
-    if (!inSectionViewport() || event.touches.length === 0) {
+    if (!isSectionCentered() || event.touches.length === 0) {
       return;
     }
 
