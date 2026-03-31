@@ -53,8 +53,8 @@
     --color-footer-title: #d4d6da;
     --color-footer-text: #8d9096;
     --color-footer-link: #b5b8be;
-    --hero-overlay-top-size: 60%;
-    --hero-overlay-bottom-size: 20%;
+    --hero-overlay-top-size: 50%;
+    --hero-overlay-bottom-size: 25%;
 }
 
 body {

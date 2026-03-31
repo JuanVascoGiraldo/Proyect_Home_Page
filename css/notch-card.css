@@ -1,6 +1,6 @@
 .cargo-tech-section {
     width: 100%;
-    padding: clamp(2rem, 4vw, 3.2rem) clamp(1rem, 2.2vw, 1.6rem);
+    padding: clamp(2rem, 4vw, 3.2rem) 7%;
     background: #eceef1;
     border: 1px solid #e1e3e8;
     box-shadow: 0 -8px 14px -14px rgba(18, 26, 40, 0.5), 0 20px 30px -18px rgba(18, 26, 40, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.55), inset 0 14px 22px -20px rgba(18, 26, 40, 0.28), inset 0 -14px 20px -16px rgba(18, 26, 40, 0.3);
@@ -19,6 +19,7 @@
         7% 97%,
         0% 97%
     );
+    height: 100vh;
 }
 
 .cargo-tech-shell {

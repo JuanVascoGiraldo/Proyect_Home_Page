@@ -1,11 +1,11 @@
 .security-section {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 100vh;
     margin-top: -3%;
     z-index: 1;
     min-height: 70vh;
-    padding: clamp(1.4rem, 4vh, 2.8rem) 0;
+    padding: clamp(1.4rem, 4vh, 2.8rem) 7%;
     background-image: url("../resources/security/background_2.webp");
     background-position: center;
     background-repeat: no-repeat;

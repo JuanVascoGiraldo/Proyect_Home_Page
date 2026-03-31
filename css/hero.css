@@ -1,9 +1,11 @@
 .hero-section {
-    height: 80vh;
+    height: 85vh;
     position: relative;
     overflow: hidden;
     isolation: isolate;
 }
+
+
 
 .hero-video {
     position: absolute;
@@ -27,7 +29,12 @@
 .hero-overlay-top {
     top: 0;
     height: var(--hero-overlay-top-size);
-    background: linear-gradient(to bottom, #1f3864, #1f386400 100%);
+    background: linear-gradient(
+        to bottom,
+        var(--color1) 0%,
+        rgba(44, 59, 99, 0.20) 20%,
+        #1f386400 100%
+    );
 }
 
 .hero-overlay-bottom {
@@ -35,16 +42,21 @@
     height: var(--hero-overlay-bottom-size);
     background: linear-gradient(
         to top,
-        var(--color-bg-page) 0%,
-        rgba(238, 242, 247, 0.82) 38%,
-        rgba(238, 242, 247, 0) 100%
+        #ffffff 0%,
+        rgba(255, 255, 255, 0.95) 25%,
+        rgba(255, 255, 255, 0.75) 50%,
+        rgba(255, 255, 255, 0.4) 75%,
+        rgba(255, 255, 255, 0.15) 90%,
+        rgba(255, 255, 255, 0) 100%
     );
+
+    pointer-events: none;
 }
 
 .hero-content {
     position: absolute;
     top: clamp(1.5rem, 5vw, 3.2rem);
-    left: clamp(1.2rem, 6vw, 5.2rem);
+    left: 7%;
     z-index: 2;
     max-width: min(740px, 90%);
     color: #ffffff;
@@ -52,14 +64,14 @@
 
 .hero-title {
     margin: 0;
-    font-size: 26px;
+    font-size: 43.94px;
     line-height: 1.2;
     font-weight: 700;
 }
 
 .hero-text {
     margin: 0.9rem 0 0;
-    font-size: 16px;
+    font-size: 27.04px;
     line-height: 1.5;
     max-width: 52ch;
 }
@@ -79,7 +91,7 @@
     padding: 0.62rem 1.15rem;
     border-radius: 8px;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1.521rem;
     font-weight: 600;
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
@@ -101,7 +113,7 @@
 /* Stats Bar - Glassmorphism */
 .stats-bar {
     position: absolute;
-    bottom: clamp(1rem, 3.5vw, 2rem);
+    bottom: 30%;;
     right: clamp(0.8rem, 3.5vw, 2.2rem);
     z-index: 3;
     display: grid;
@@ -137,12 +149,11 @@
 }
 
 .stat-number {
-    font-size: clamp(0.75rem, 1.56vw, 1.125rem);
+    font-size: clamp(1rem, 2.1vw, 1.5rem);
     font-weight: 700;
     color: #ffffff;
     line-height: 1.1;
     margin-bottom: clamp(0.1rem, 0.3vw, 0.15rem);
-    font-family: 'Inter', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     opacity: 0;
     animation: fadeInNumber 0.6s ease-out forwards;
 }
@@ -184,7 +195,7 @@
 }
 
 .stat-label {
-    font-size: clamp(0.5rem, 0.875vw, 0.625rem);
+    font-size: clamp(0.68rem, 1.15vw, 0.85rem);
     color: #ffffff;
     line-height: 1.25;
     opacity: 0.85;
@@ -197,6 +208,7 @@
         grid-template-columns: repeat(3, 1fr);
         width: min(52vw, 800px);
         padding: clamp(0.65rem, 1.3vw, 0.95rem) clamp(0.85rem, 1.8vw, 1.1rem);
+        bottom: 30%;
     }
 
     .stat-item {
@@ -209,7 +221,7 @@
         grid-template-columns: repeat(2, 1fr);
         width: min(58vw, 650px);
         padding: clamp(0.6rem, 1.2vw, 0.9rem) clamp(0.8rem, 1.6vw, 1rem);
-        bottom: 1rem;
+        bottom: 30%;
         right: 1rem;
     }
 
@@ -265,16 +277,16 @@
     }
 
     .hero-title {
-        font-size: 24px;
+        font-size: 40.56px;
     }
 
     .hero-text {
-        font-size: 15px;
+        font-size: 25.35px;
     }
 
     .hero-btn {
         min-width: 112px;
-        font-size: 0.86rem;
+        font-size: 1.453rem;
     }
 
     .hero-section {

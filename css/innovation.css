@@ -1,16 +1,22 @@
 /* ===== INNOVACION SECTION ===== */
 
 .innovation-section {
+    position: relative;
     width: 100%;
-    padding: clamp(2rem, 4vw, 3.2rem) 10%;
+    margin-top: -2px;
+    z-index: 1;
+    padding: 0 7%;
     background: #ffffff;
+    height: 85vh;
+    display: flex;
+    align-items: center;
 }
 
 .innovation-shell {
     width: 100%;
     margin: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     gap: clamp(2rem, 4vw, 4rem);
     align-items: start;
     padding: 0;
@@ -18,12 +24,14 @@
 
 .innovation-intro {
     padding: clamp(1rem, 2vw, 1.5rem) 0;
+    justify-self: start;
+    text-align: left;
 }
 
 .innovation-kicker {
     margin: 0;
     color: #0072bc;
-    font-size: clamp(1.395rem, 2.52vw, 2.115rem);
+    font-size: clamp(1.953rem, 3.528vw, 2.961rem);
     letter-spacing: 0.01em;
     text-transform: uppercase;
 }
@@ -31,28 +39,28 @@
 .innovation-title {
     margin: 0.45rem 0 0;
     color: #21252b;
-    font-size: clamp(1.08rem, 1.89vw, 1.8rem);
+    font-size: clamp(1.296rem, 2.268vw, 2.16rem);
     font-weight: 500;
 }
 
 .innovation-text {
     margin: 0.9rem 0 1.8rem;
     color: #6d727a;
-    font-size: clamp(0.738rem, 0.9vw, 0.9rem);
+    font-size: clamp(1.033rem, 1.26vw, 1.26rem);
     line-height: 1.55;
     text-align: justify;
 }
 
 .innovation-btn {
     display: inline-block;
-    padding: clamp(0.7rem, 1.2vw, 1rem) clamp(1.5rem, 2.8vw, 2.2rem);
-    background: var(--color3);
+    padding: clamp(0.3rem, 0.6vw, 0.6rem) clamp(1.5rem, 2.8vw, 2.2rem);
+    background: #0072bc;
     color: #ffffff;
     text-decoration: none;
     font-size: clamp(0.675rem, 0.855vw, 0.855rem);
     font-weight: 600;
     border-radius: 0.35rem;
-    border: 2px solid var(--color3);
+    border: 2px solid #0072bc;
     transition: all 0.3s ease;
     cursor: pointer;
 }
@@ -68,6 +76,10 @@
     display: flex;
     flex-direction: column;
     gap: 0;
+    width: min(100%, 588px);
+    justify-self: end;
+    box-sizing: border-box;
+    padding-right: 7%;
 }
 
 .innovation-item {
@@ -92,7 +104,7 @@
     border-bottom: 1px solid #d5d8de;
     border-radius: 0;
     color: #21252b;
-    font-size: clamp(0.729rem, 0.972vw, 0.891rem);
+    font-size: clamp(0.919rem, 1.225vw, 1.122rem);
     font-weight: 600;
     text-align: left;
     cursor: pointer;
@@ -116,9 +128,9 @@
 
 .innovation-index {
     flex-shrink: 0;
-    font-weight: 800;
-    color: var(--color4);
-    font-size: clamp(0.99rem, 1.62vw, 1.44rem);
+    font-weight: 600;
+    color: #0072bc;
+    font-size: clamp(1.247rem, 2.041vw, 1.814rem);
 }
 
 .innovation-item-title {
@@ -128,7 +140,7 @@
 
 .innovation-icon {
     flex-shrink: 0;
-    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    font-size: clamp(1.512rem, 2.52vw, 2.268rem);
     font-weight: 300;
     color: #6d727a;
     transition: all 0.3s ease;
@@ -173,7 +185,7 @@
     border-top: none;
     border-radius: 0;
     color: #6d727a;
-    font-size: clamp(0.738rem, 0.9vw, 0.9rem);
+    font-size: clamp(0.93rem, 1.134vw, 1.134rem);
     line-height: 1.6;
     text-align: justify;
 }
@@ -198,10 +210,10 @@
     }
 
     .innovation-index {
-        font-size: clamp(0.95rem, 1.5vw, 1.3rem);
+        font-size: clamp(0.855rem, 1.35vw, 1.17rem);
     }
 
     .innovation-item-title {
-        font-size: clamp(0.8rem, 1vw, 0.95rem);
+        font-size: clamp(0.72rem, 0.9vw, 0.855rem);
     }
 }
