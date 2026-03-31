@@ -41,6 +41,19 @@
       }
     });
 
+    const countryNode = document.querySelector('.locale-country');
+    if (countryNode && data.country) {
+      const textNode = countryNode.childNodes[countryNode.childNodes.length - 1];
+      if (textNode && textNode.nodeType === Node.TEXT_NODE) {
+        textNode.nodeValue = ` ${data.country}`;
+      }
+    }
+
+    const langSelect = document.querySelector('.lang-select');
+    if (langSelect) {
+      langSelect.value = lang;
+    }
+
     const langButton = document.querySelector('.lang-btn');
     if (langButton) {
       setButtonLabel(langButton, data.langLabel || (lang === 'es' ? 'ESP' : 'ENG'));
@@ -245,6 +258,13 @@
     const persisted = normalizeLanguage(window.localStorage.getItem(storageKey));
     const initial = normalizeLanguage(window.currentLanguage || document.documentElement.lang || persisted);
     window.currentLanguage = initial;
+
+    const langSelect = document.querySelector('.lang-select');
+    if (langSelect) {
+      langSelect.addEventListener('change', (event) => {
+        setLanguage(event.target.value);
+      });
+    }
 
     const langButton = document.querySelector('.lang-btn');
     if (langButton) {

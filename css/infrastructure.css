@@ -55,6 +55,7 @@
     font-weight: 600;
     line-height: 1.25;
     max-width: 27ch;
+    white-space: pre-line;
 }
 
 @media (max-width: 640px) {

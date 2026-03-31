@@ -69,18 +69,19 @@
 }
 
 .main-nav .nav-link {
-    color: var(--color-header-text-soft);
+    color: #ffffff;
     text-decoration: none;
     font-size: 0.72rem;
     letter-spacing: 0.06rem;
     font-weight: 600;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, font-weight 0.2s ease;
 }
 
 .main-nav .nav-link:hover,
 .main-nav .nav-link:focus-visible,
 .main-nav .nav-link.is-active {
-    color: var(--color-header-active);
+    color: #ffffff;
+    font-weight: 700;
 }
 
 .locale-tools {
@@ -92,8 +93,8 @@
 }
 
 .locale-country,
-.lang-btn {
-    color: var(--color-header-text-soft);
+.lang-select {
+    color: #ffffff;
     font-size: 0.72rem;
     letter-spacing: 0.04rem;
     font-weight: 600;
@@ -114,22 +115,23 @@
     opacity: 0.92;
 }
 
-.lang-btn {
-    border: none;
-    background: transparent;
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
+.locale-country:hover,
+.lang-select:hover,
+.lang-select:focus-visible {
+    font-weight: 700;
 }
 
-.lang-arrow {
-    width: 0.45rem;
-    height: 0.45rem;
-    border-left: 1px solid currentColor;
-    border-bottom: 1px solid currentColor;
-    transform: rotate(-45deg) translateY(-1px);
-    opacity: 0.9;
+.lang-select {
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    background: transparent;
+    border-radius: 6px;
+    padding: 0.18rem 0.4rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.lang-select option {
+    color: #111318;
 }
 
 @media (max-width: 576px) {
