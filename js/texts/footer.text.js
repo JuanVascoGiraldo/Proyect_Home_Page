@@ -3,7 +3,7 @@ window.pageTexts = window.pageTexts || {};
 window.pageTexts.footer = {
   es: {
     copyrightPrefix: 'Copyright © 2026 Mein Logistics',
-    privacy: 'Hola mundo Aviso de Privacidad',
+    privacy: 'Aviso de Privacidad',
     address: 'Insurgentes Sur No. 700, Piso 9 Col. Del Valle C.P. 03100, CDMX',
     menuTitle: 'MENU',
     menuLinks: ['Inicio', 'Nosotros', 'Servicios', 'Verticales', 'Contacto'],
