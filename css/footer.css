@@ -1,6 +1,9 @@
 .site-footer {
-  margin-top: 3rem;
+    margin-top: 0;
   background-color: var(--color-footer-bg);
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
+    overflow: hidden;
 }
 
 .footer-shell {
