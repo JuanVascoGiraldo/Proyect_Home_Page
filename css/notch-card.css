@@ -1,6 +1,6 @@
 .cargo-tech-section {
     width: 100%;
-    padding: clamp(2rem, 4vw, 3.2rem) 7%;
+    padding: 7% 7%;
     background: #eceef1;
     border: 1px solid #e1e3e8;
     box-shadow: 0 -8px 14px -14px rgba(18, 26, 40, 0.5), 0 20px 30px -18px rgba(18, 26, 40, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.55), inset 0 14px 22px -20px rgba(18, 26, 40, 0.28), inset 0 -14px 20px -16px rgba(18, 26, 40, 0.3);
@@ -23,7 +23,7 @@
 }
 
 .cargo-tech-shell {
-    width: min(1320px, 100% - 4rem);
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -37,13 +37,13 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: clamp(1.6rem, 3vw, 3.5rem);
-    align-items: center;
+    align-items: stretch;
 }
 
 .cargo-kicker {
     margin: 0;
     color: #0072bc;
-    font-size: clamp(1.55rem, 2.8vw, 2.35rem);
+    font-size: clamp(2.325rem, 4.2vw, 3.525rem);
     letter-spacing: 0.01em;
     text-transform: uppercase;
     }
@@ -51,7 +51,7 @@
 .cargo-subtitle {
     margin: 0.45rem 0 0;
     color: #21252b;
-    font-size: clamp(1.2rem, 2.1vw, 2rem);
+    font-size: clamp(1.5rem, 2.625vw, 2.5rem);
     font-weight: 500;
 }
 
@@ -59,7 +59,7 @@
     margin: 0.9rem auto 0;
     max-width: 95ch;
     color: #6d727a;
-    font-size: clamp(0.82rem, 1vw, 1rem);
+    font-size: clamp(1.025rem, 1.25vw, 1.25rem);
     line-height: 1.55;
 }
 
@@ -102,7 +102,7 @@
 
 .cargo-media.is-changing,
 .cargo-content-main.is-changing {
-    opacity: 0.58;
+    opacity: 1;
 }
 
 .cargo-media.is-changing {
@@ -118,12 +118,15 @@
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 1.2rem;
-    align-items: center;
+    align-items: stretch;
+    height: 100%;
 }
 
 .cargo-content-main {
-    padding-top: 0;
-    align-self: center;
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     transition: opacity 220ms ease;
     will-change: opacity, transform;
 }
@@ -176,15 +179,15 @@
 
 .cargo-item-title {
     margin: 0;
-    color: #1f242a;
+    color: #000000;
     font-size: clamp(1.6rem, 2.6vw, 3rem);
     font-weight: 500;
 }
 
 .cargo-description {
     margin: 0.9rem 0 0;
-    color: #000000;
-    font-size: clamp(0.88rem, 1vw, 1rem);
+    color: #1f242a;
+    font-size: clamp(1.056rem, 1.2vw, 1.2rem);
     line-height: 1.48;
     max-width: 52ch;
 }
@@ -193,6 +196,8 @@
     --progress: 0%;
     min-width: 2.8rem;
     min-height: clamp(11rem, 20vh, 15rem);
+    max-height: 70%;
+    margin-top: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -204,7 +209,7 @@
 }
 
 .cargo-step-line {
-    width: 2px;
+    width: 10px;
     flex: 1;
     min-height: clamp(6.8rem, 13vh, 10rem);
     border-radius: 999px;
@@ -218,7 +223,8 @@
 }
 
 .cargo-btn {
-    margin-top: clamp(1rem, 2vw, 1.8rem);
+    margin: 0 50% 10% 0;
+    margin-top: auto;
     display: inline-flex;
     align-items: center;
     justify-content: center;

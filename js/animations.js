@@ -46,6 +46,7 @@ function initCargoCarousel() {
   }
 
   let hasCenteredCargoContent = false;
+  let isMouseOver = false;
 
   function centerCargoContent() {
     // if (hasCenteredCargoContent) {
@@ -124,7 +125,7 @@ function initCargoCarousel() {
 
     clearRenderTimers();
     media.classList.remove('is-entering');
-    contentMain.classList.remove('is-entering');
+    // contentMain.classList.remove('is-entering');
     media.classList.add('is-changing');
     contentMain.classList.add('is-changing');
 
@@ -153,7 +154,7 @@ function initCargoCarousel() {
         stepper.style.setProperty('--progress', `${progress}%`);
 
         media.classList.add('is-entering');
-        contentMain.classList.add('is-entering');
+        // contentMain.classList.add('is-entering');
 
         renderFinalizeTimeout = window.setTimeout(() => {
           if (token !== renderToken) {
@@ -161,7 +162,7 @@ function initCargoCarousel() {
           }
 
           media.classList.remove('is-changing', 'is-entering');
-          contentMain.classList.remove('is-changing', 'is-entering');
+          // contentMain.classList.remove('is-changing', 'is-entering');
 
           if (mediaWrap) {
             mediaWrap.classList.remove('is-changing');
@@ -210,7 +211,7 @@ function initCargoCarousel() {
   }
 
   function onWheel(event) {
-    if (!isSectionCentered()) {
+    if (!isSectionCentered() || !isMouseOver) {
       return;
     }
 
@@ -233,7 +234,7 @@ function initCargoCarousel() {
   }
 
   function onKeyDown(event) {
-    if (!isSectionCentered()) {
+    if (!isSectionCentered() || !isMouseOver) {
       return;
     }
 
@@ -255,7 +256,7 @@ function initCargoCarousel() {
   }
 
   function onTouchMove(event) {
-    if (!isSectionCentered() || event.touches.length === 0) {
+    if (!isSectionCentered() || !isMouseOver || event.touches.length === 0) {
       return;
     }
 
@@ -299,6 +300,14 @@ function initCargoCarousel() {
     }
 
     renderSlide(Math.max(currentIndex, 0));
+  });
+
+  carouselCard.addEventListener('mouseover', () => {
+    isMouseOver = true;
+  });
+
+  carouselCard.addEventListener('mouseout', () => {
+    isMouseOver = false;
   });
 
   window.addEventListener('wheel', onWheel, { passive: false });

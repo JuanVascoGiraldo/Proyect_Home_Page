@@ -32,8 +32,11 @@
     background: linear-gradient(
         to bottom,
         var(--color1) 0%,
-        rgba(44, 59, 99, 0.20) 20%,
-        #1f386400 100%
+        rgba(44, 59, 99, 0.95) 25%,
+        rgba(44, 59, 99, 0.75) 50%,
+        rgba(44, 59, 99, 0.4) 75%,
+        rgba(44, 59, 99, 0.15) 90%,
+        rgba(44, 59, 99, 0) 100%
     );
 }
 
@@ -55,7 +58,7 @@
 
 .hero-content {
     position: absolute;
-    top: clamp(1.5rem, 5vw, 3.2rem);
+    top: 15%;
     left: 7%;
     z-index: 2;
     max-width: min(740px, 90%);
@@ -149,7 +152,7 @@
 }
 
 .stat-number {
-    font-size: clamp(1rem, 2.1vw, 1.5rem);
+    font-size: clamp(1.3rem, 2.73vw, 1.95rem);
     font-weight: 700;
     color: #ffffff;
     line-height: 1.1;
@@ -195,7 +198,7 @@
 }
 
 .stat-label {
-    font-size: clamp(0.68rem, 1.15vw, 0.85rem);
+    font-size: clamp(0.884rem, 1.495vw, 1.105rem);
     color: #ffffff;
     line-height: 1.25;
     opacity: 0.85;

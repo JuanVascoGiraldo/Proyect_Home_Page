@@ -7,7 +7,6 @@
 @import url("./security.css");
 @import url("./performance.css");
 @import url("./infrastructure.css");
-@import url("./containers.css");
 @import url("./footer.css");
 
 @font-face {
@@ -45,7 +44,7 @@
     --color-header-bg: var(--color1);
     --color-header-bg-deep: var(--color1);
     --color-header-text: #e8f0ff;
-    --color-header-text-soft: var(--color2);
+    --color-header-text-soft: white;
     --color-header-active: #ffffff;
     --color-brand-mark: var(--color3);
     --header-offset: 96px;
@@ -53,7 +52,7 @@
     --color-footer-title: #d4d6da;
     --color-footer-text: #8d9096;
     --color-footer-link: #b5b8be;
-    --hero-overlay-top-size: 50%;
+    --hero-overlay-top-size: 25%;
     --hero-overlay-bottom-size: 25%;
 }
 
