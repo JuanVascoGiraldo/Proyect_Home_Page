@@ -28,36 +28,49 @@ function animateCounters() {
   });
 }
 
-function initCargoCarousel() {
-  const section = document.querySelector('.cargo-tech-section');
-  const media = document.getElementById('cargoMedia');
-  const title = document.getElementById('cargoItemTitle');
-  const description1 = document.getElementById('cargoDescription1');
-  const description2 = document.getElementById('cargoDescription2');
-  const stepCurrent = document.getElementById('cargoStepCurrent');
-  const stepper = document.querySelector('.cargo-stepper');
-  const cargoContent = document.querySelector('.cargo-content');
-  const contentMain = document.querySelector('.cargo-content-main');
-  const carouselCard = document.getElementById('cargoCarousel');
-  const mediaWrap = media.closest('.cargo-media-wrap');
-
-  if (!section || !media || !title || !description1 || !description2 || !stepCurrent || !stepper || !cargoContent || !contentMain) {
+function initLenisSmoothScroll() {
+  if (!window.Lenis || window.__lenisInitialized) {
     return;
   }
 
-  let hasCenteredCargoContent = false;
-  let isMouseOver = false;
+  const lenis = new window.Lenis({
+    duration: 1.1,
+    smoothWheel: true,
+    wheelMultiplier: 1,
+    touchMultiplier: 1.15
+  });
 
-  function centerCargoContent() {
-    // if (hasCenteredCargoContent) {
-    //   return;
-    // }
-
-    // hasCenteredCargoContent = true;
-    // cargoContent.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    // cargoContent.setAttribute('tabindex', '-1');
-    // cargoContent.focus({ preventScroll: true });
+  function raf(time) {
+    lenis.raf(time);
+    if (window.ScrollTrigger) {
+      window.ScrollTrigger.update();
+    }
+    window.requestAnimationFrame(raf);
   }
+
+  window.requestAnimationFrame(raf);
+  window.__lenisInitialized = true;
+  window.__lenisInstance = lenis;
+}
+
+function initCargoCarousel() {
+  const section = document.querySelector('.cargo-tech-section');
+  const card = document.getElementById('cargoCarousel');
+  const mediaWrap = document.querySelector('.cargo-media-wrap');
+  const contentMain = document.querySelector('.cargo-content-main');
+  const stepCurrent = document.getElementById('cargoStepCurrent');
+  const stepTotal = document.querySelector('.cargo-step-bottom');
+  const stepper = document.querySelector('.cargo-stepper');
+
+  if (!section || !card || !mediaWrap || !contentMain || !stepCurrent || !stepper) {
+    return;
+  }
+
+  if (!(window.gsap && window.ScrollTrigger)) {
+    return;
+  }
+
+  window.gsap.registerPlugin(window.ScrollTrigger);
 
   const fallbackSlides = [
     {
@@ -85,235 +98,283 @@ function initCargoCarousel() {
     return fallbackSlides;
   }
 
-  let slides = getLocalizedSlides();
-
-  const mediaRevealDuration = 460;
-  const mediaSwapDelay = 270;
-
-  let currentIndex = 0;
-  let wheelLocked = false;
-  let touchStartY = 0;
-  let centerLockActive = true;
-  let renderToken = 0;
-  let renderSwapTimeout = null;
-  let renderFinalizeTimeout = null;
-
-  function preloadImage(source) {
-    return new Promise((resolve) => {
-      const image = new Image();
-      image.onload = () => resolve(source);
-      image.onerror = () => resolve(source);
-      image.src = source;
-    });
+  function getLocalizedCta() {
+    const lang = typeof window.getCurrentLanguage === 'function' ? window.getCurrentLanguage() : 'es';
+    const notchSection = window.pageTexts?.notch;
+    if (notchSection?.[lang]?.cta) {
+      return notchSection[lang].cta;
+    }
+    if (notchSection?.es?.cta) {
+      return notchSection.es.cta;
+    }
+    return lang === 'es' ? 'Conoce nuestras soluciones' : 'Discover our solutions';
   }
 
-  function clearRenderTimers() {
-    if (renderSwapTimeout !== null) {
-      window.clearTimeout(renderSwapTimeout);
-      renderSwapTimeout = null;
+  const backgroundPalette = ['#eceef1', '#e7edf8', '#e8f3ef', '#f2ece4', '#e9ecf6', '#ebf2f0'];
+
+  let slides = [];
+  let timeline = null;
+  let trigger = null;
+  let activeTextIndex = -1;
+  let progressValue = 0;
+  let unbindInteractions = null;
+  let isAnimating = false; // Controla si la animación está activa
+  let scrollTriggerInstance = null; // Instancia de ScrollTrigger
+
+  function updateStepper(progress) {
+    const normalized = Math.max(0, Math.min(1, progress));
+    const total = Math.max(slides.length, 1);
+    const stepIndex = Math.min(total - 1, Math.floor(normalized * total));
+    const denominator = Math.max(total - 1, 1);
+    const fill = (stepIndex / denominator) * 100;
+    stepCurrent.textContent = String(stepIndex + 1).padStart(2, '0');
+    stepper.style.setProperty('--progress', `${fill}%`);
+    return stepIndex;
+  }
+
+  function renderTextSlide(index) {
+    const safeIndex = Math.max(0, Math.min(index, slides.length - 1));
+    const slide = slides[safeIndex] || slides[0];
+    const cta = getLocalizedCta();
+
+    if (!slide) {
+      contentMain.innerHTML = '';
+      return;
     }
 
-    if (renderFinalizeTimeout !== null) {
-      window.clearTimeout(renderFinalizeTimeout);
-      renderFinalizeTimeout = null;
+    contentMain.innerHTML = [
+      '<article class="cargo-text-active">',
+      `  <h3 class="cargo-item-title">${slide.title || ''}</h3>`,
+      `  <p class="cargo-description cargo-description-strong">${slide.text1 || ''}</p>`,
+      `  <p class="cargo-description">${slide.text2 || ''}</p>`,
+      `  <a href="#" class="cargo-btn">${cta}</a>`,
+      '</article>'
+    ].join('');
+
+    activeTextIndex = safeIndex;
+  }
+
+  function buildContent() {
+    mediaWrap.innerHTML = [
+      '<div class="cargo-media-stack">',
+      slides.map((slide, index) => {
+        const z = slides.length - index;
+        return [
+          `<div class="cargo-media-layer" data-layer="${index}" style="z-index:${z};">`,
+          `  <img class="cargo-media" src="${slide.image}" alt="${slide.alt || slide.title || 'Vertical image'}">`,
+          '</div>'
+        ].join('');
+      }).join(''),
+      '</div>'
+    ].join('');
+
+    if (stepTotal) {
+      stepTotal.textContent = String(slides.length).padStart(2, '0');
+    }
+    stepCurrent.textContent = '01';
+    stepper.style.setProperty('--progress', '0%');
+    renderTextSlide(0);
+  }
+
+  function destroyAnimation() {
+    if (unbindInteractions) {
+      unbindInteractions();
+      unbindInteractions = null;
+    }
+
+    if (scrollTriggerInstance) {
+      scrollTriggerInstance.kill();
+      scrollTriggerInstance = null;
+    }
+
+    if (trigger) {
+      trigger.kill();
+      trigger = null;
+    }
+    if (timeline) {
+      timeline.kill();
+      timeline = null;
+    }
+    
+    isAnimating = false;
+    progressValue = 0;
+  }
+
+  function applyProgress(nextProgress, force) {
+    if (!isAnimating && !force) {
+      return;
+    }
+    
+    progressValue = Math.max(0, Math.min(1, nextProgress));
+    if (timeline) {
+      timeline.progress(progressValue);
+    }
+    const stepIndex = updateStepper(progressValue);
+    if (stepIndex !== activeTextIndex) {
+      renderTextSlide(stepIndex);
     }
   }
 
-  function renderSlide(index) {
-    const token = ++renderToken;
-    const item = slides[index];
+  function buildScrollAnimation() {
+    const gsap = window.gsap;
+    const layers = Array.from(mediaWrap.querySelectorAll('.cargo-media-layer'));
+    const images = Array.from(mediaWrap.querySelectorAll('.cargo-media'));
 
-    clearRenderTimers();
-    media.classList.remove('is-entering');
-    // contentMain.classList.remove('is-entering');
-    media.classList.add('is-changing');
-    contentMain.classList.add('is-changing');
+    destroyAnimation();
 
-    if (mediaWrap) {
-      mediaWrap.classList.add('is-changing');
+    if (layers.length <= 1 || images.length <= 1) {
+      updateStepper(0);
+      renderTextSlide(0);
+      return;
     }
 
-    preloadImage(item.image).then(() => {
-      if (token !== renderToken) {
+    gsap.set(layers, { clipPath: 'inset(0px 0px 0px 0px)' });
+    gsap.set(images, { objectPosition: '50% 50%' });
+
+    // Crear timeline pero PAUSADO inicialmente
+    timeline = gsap.timeline({ defaults: { ease: 'none' }, paused: true });
+    const bodyColorTarget = document.body;
+    const htmlColorTarget = document.documentElement;
+
+    for (let index = 0; index < layers.length - 1; index += 1) {
+      const currentLayer = layers[index];
+      const currentImage = images[index];
+      const nextImage = images[index + 1];
+      const bgColor = backgroundPalette[(index + 1) % backgroundPalette.length];
+
+      timeline.to(currentLayer, {
+        clipPath: 'inset(0px 0px 100% 0px)',
+        duration: 1
+      }, index);
+
+      timeline.to(currentImage, {
+        objectPosition: '50% 66%',
+        duration: 1
+      }, index);
+
+      timeline.fromTo(nextImage, {
+        objectPosition: '50% 32%'
+      }, {
+        objectPosition: '50% 50%',
+        duration: 1
+      }, index);
+
+      timeline.to([bodyColorTarget, htmlColorTarget], {
+        backgroundColor: bgColor,
+        duration: 0.22
+      }, index + 0.98);
+    }
+
+    function isSectionCentered() {
+      const rect = section.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      const topLimit = vh * 0.2;
+      const bottomLimit = vh * 0.8;
+      return rect.top <= topLimit && rect.bottom >= bottomLimit;
+    }
+
+    const progressState = { value: progressValue };
+    let progressTween = null;
+
+    function animateToProgress(nextProgress) {
+      const target = Math.max(0, Math.min(1, nextProgress));
+      if (progressTween) {
+        progressTween.kill();
+      }
+
+      progressTween = gsap.to(progressState, {
+        value: target,
+        duration: 0.28,
+        ease: 'power2.out',
+        overwrite: true,
+        onUpdate: () => {
+          applyProgress(progressState.value, true);
+        }
+      });
+    }
+
+    function onSectionWheel(event) {
+      if (!isAnimating) return; // No procesar si la animación no está activa
+      if (!isSectionCentered()) {
         return;
       }
 
-      renderSwapTimeout = window.setTimeout(() => {
-        if (token !== renderToken) {
-          return;
-        }
+      const delta = event.deltaY;
+      const current = progressState.value;
+      const next = current + delta * 0.0011;
+      const clamped = Math.max(0, Math.min(1, next));
+      const atStartGoingUp = current <= 0 && delta < 0;
+      const atEndGoingDown = current >= 1 && delta > 0;
 
-        media.src = item.image;
-        media.alt = item.alt;
-        title.textContent = item.title;
-        description1.textContent = item.text1;
-        description2.textContent = item.text2;
-        stepCurrent.textContent = String(index + 1).padStart(2, '0');
-        const denominator = Math.max(slides.length - 1, 1);
-        const progress = (index / denominator) * 100;
-        stepper.style.setProperty('--progress', `${progress}%`);
-
-        media.classList.add('is-entering');
-        // contentMain.classList.add('is-entering');
-
-        renderFinalizeTimeout = window.setTimeout(() => {
-          if (token !== renderToken) {
-            return;
-          }
-
-          media.classList.remove('is-changing', 'is-entering');
-          // contentMain.classList.remove('is-changing', 'is-entering');
-
-          if (mediaWrap) {
-            mediaWrap.classList.remove('is-changing');
-          }
-        }, mediaRevealDuration + 20);
-      }, mediaSwapDelay);
-    });
-  }
-
-  function isSectionCentered() {
-    const focusTarget = carouselCard || cargoContent || section;
-    const rect = focusTarget.getBoundingClientRect();
-    const vh = window.innerHeight || document.documentElement.clientHeight;
-    const viewportCenter = vh / 2;
-    const targetCenter = rect.top + rect.height / 2;
-
-    // Histéresis: activa con un rango mas amplio y libera mas tarde.
-    // Evita perder el bloqueo cuando el usuario hace scroll rapido.
-    const enterTolerance = Math.max(110, vh * 0.2);
-    const exitTolerance = Math.max(170, vh * 0.3);
-    const tolerance = centerLockActive ? exitTolerance : enterTolerance;
-
-    const crossesViewportCenterLine = rect.top <= viewportCenter && rect.bottom >= viewportCenter;
-    const isCentered = Math.abs(targetCenter - viewportCenter) <= tolerance || crossesViewportCenterLine;
-    const hasEnoughVisibleArea = rect.top < vh * 0.9 && rect.bottom > vh * 0.1;
-
-    centerLockActive = isCentered && hasEnoughVisibleArea;
-
-    return centerLockActive;
-  }
-
-  function handleStep(direction) {
-    if (direction > 0 && currentIndex < slides.length - 1) {
-      currentIndex += 1;
-      renderSlide(currentIndex);
-      return true;
-    }
-
-    if (direction < 0 && currentIndex > 0) {
-      currentIndex -= 1;
-      renderSlide(currentIndex);
-      return true;
-    }
-
-    return false;
-  }
-
-  function onWheel(event) {
-    if (!isSectionCentered() || !isMouseOver) {
-      return;
-    }
-
-    const direction = event.deltaY > 0 ? 1 : -1;
-
-    if (wheelLocked) {
-      event.preventDefault();
-      return;
-    }
-
-    const consumed = handleStep(direction);
-
-    if (consumed) {
-      event.preventDefault();
-      wheelLocked = true;
-      window.setTimeout(() => {
-        wheelLocked = false;
-      }, 420);
-    }
-  }
-
-  function onKeyDown(event) {
-    if (!isSectionCentered() || !isMouseOver) {
-      return;
-    }
-
-    if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') {
-      return;
-    }
-
-    const direction = event.key === 'ArrowDown' ? 1 : -1;
-    const consumed = handleStep(direction);
-    if (consumed) {
-      event.preventDefault();
-    }
-  }
-
-  function onTouchStart(event) {
-    if (event.touches.length > 0) {
-      touchStartY = event.touches[0].clientY;
-    }
-  }
-
-  function onTouchMove(event) {
-    if (!isSectionCentered() || !isMouseOver || event.touches.length === 0) {
-      return;
-    }
-
-    const delta = touchStartY - event.touches[0].clientY;
-    if (Math.abs(delta) < 30) {
-      return;
-    }
-
-    const direction = delta > 0 ? 1 : -1;
-    const consumed = handleStep(direction);
-    if (consumed) {
-      event.preventDefault();
-      touchStartY = event.touches[0].clientY;
-    }
-  }
-
-  if ('IntersectionObserver' in window) {
-    const cargoFocusObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
-            centerCargoContent();
-            observer.disconnect();
-          }
-        });
-      },
-      {
-        threshold: [0.55]
+      if (atStartGoingUp || atEndGoingDown) {
+        return;
       }
-    );
 
-    cargoFocusObserver.observe(cargoContent);
+      event.preventDefault();
+      animateToProgress(clamped);
+    }
+
+    // Crear ScrollTrigger para activar la animación cuando la sección entra en el viewport
+    scrollTriggerInstance = window.ScrollTrigger.create({
+      trigger: section,
+      start: "top 85%", // Cuando el top de la sección alcanza el 85% del viewport
+      end: "bottom 15%", // Hasta que el bottom alcanza el 15% del viewport
+      onEnter: () => {
+        if (!isAnimating) {
+          isAnimating = true;
+          // Asegurar que el timeline esté en el progreso correcto
+          if (timeline) {
+            timeline.progress(progressValue);
+          }
+        }
+      },
+      onLeave: () => {
+        // Opcional: pausar cuando sale completamente
+        // isAnimating = false;
+      },
+      onEnterBack: () => {
+        if (!isAnimating) {
+          isAnimating = true;
+          if (timeline) {
+            timeline.progress(progressValue);
+          }
+        }
+      },
+      onLeaveBack: () => {
+        // isAnimating = false;
+      }
+    });
+
+    section.addEventListener('wheel', onSectionWheel, { passive: false });
+    unbindInteractions = function () {
+      section.removeEventListener('wheel', onSectionWheel);
+      if (progressTween) {
+        progressTween.kill();
+        progressTween = null;
+      }
+    };
+
+    // NO aplicar progress automáticamente - esperar a que el usuario haga scroll
+    // applyProgress(progressValue); // <-- ELIMINADO: esto causaba la animación automática
   }
 
-  renderSlide(currentIndex);
+  function rebuild() {
+    slides = getLocalizedSlides();
+    buildContent();
+    buildScrollAnimation();
+  }
+
+  rebuild();
 
   window.addEventListener('app:language-change', () => {
-    slides = getLocalizedSlides();
-    if (currentIndex > slides.length - 1) {
-      currentIndex = slides.length - 1;
+    rebuild();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.ScrollTrigger) {
+      window.ScrollTrigger.refresh();
     }
-
-    renderSlide(Math.max(currentIndex, 0));
   });
-
-  carouselCard.addEventListener('mouseover', () => {
-    isMouseOver = true;
-  });
-
-  carouselCard.addEventListener('mouseout', () => {
-    isMouseOver = false;
-  });
-
-  window.addEventListener('wheel', onWheel, { passive: false });
-  window.addEventListener('keydown', onKeyDown, { passive: false });
-  window.addEventListener('touchstart', onTouchStart, { passive: true });
-  window.addEventListener('touchmove', onTouchMove, { passive: false });
 }
 
 function initGalleryImageHoverSwap() {
@@ -420,12 +481,14 @@ function initDynamicHeaderOffset() {
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     initDynamicHeaderOffset();
+    initLenisSmoothScroll();
     animateCounters();
     initCargoCarousel();
     initGalleryImageHoverSwap();
   });
 } else {
   initDynamicHeaderOffset();
+  initLenisSmoothScroll();
   animateCounters();
   initCargoCarousel();
   initGalleryImageHoverSwap();
