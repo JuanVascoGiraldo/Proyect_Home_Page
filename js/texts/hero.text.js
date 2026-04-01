@@ -3,7 +3,7 @@ window.pageTexts = window.pageTexts || {};
 window.pageTexts.hero = {
   es: {
     title: 'Expertos Logisticos',
-    text: 'Servicios de Freight Management, Warehousing y Control Tower. Excelencia Operativa y Solida Red Multidisciplinaria.',
+    text: 'Servicios de Freight Management, Warehousing y Control Tower\nExcelencia Operativa y Solida Red Multidisciplinaria.',
     primaryCta: 'Servicios',
     secondaryCta: 'Cotizar',
     stats: [
@@ -17,7 +17,7 @@ window.pageTexts.hero = {
   },
   en: {
     title: 'Logistics Experts',
-    text: 'Freight Management, Warehousing and Control Tower services. Operational Excellence and a Strong Multidisciplinary Network.',
+    text: 'Freight Management, Warehousing and Control Tower services\nOperational Excellence and a Strong Multidisciplinary Network.',
     primaryCta: 'Services',
     secondaryCta: 'Get a Quote',
     stats: [

@@ -1,13 +1,18 @@
 .hero-section {
+    /* margin-top: -1px; */
     height: 85vh;
     position: relative;
     overflow: hidden;
     isolation: isolate;
+    --hero-title-size: clamp(2.4rem, 5.5vw, 2.75rem);
+    --hero-subtitle-size: clamp(1.4rem, 3.2vw, 1.7rem);
+    --hero-text-size: clamp(0.95rem, 1.2vw, 1.1rem);
 }
 
 
 
 .hero-video {
+    border-bottom: 1px solid var(--color1);
     position: absolute;
     inset: 0;
     width: 100%;
@@ -32,9 +37,9 @@
     background: linear-gradient(
         to bottom,
         var(--color1) 0%,
-        rgba(44, 59, 99, 0.95) 25%,
-        rgba(44, 59, 99, 0.75) 50%,
-        rgba(44, 59, 99, 0.4) 75%,
+        rgba(44, 59, 99, 0.95) 10%,
+        rgba(44, 59, 99, 0.75) 20%,
+        rgba(44, 59, 99, 0.4) 60%,
         rgba(44, 59, 99, 0.15) 90%,
         rgba(44, 59, 99, 0) 100%
     );
@@ -61,22 +66,23 @@
     top: 15%;
     left: 7%;
     z-index: 2;
-    max-width: min(740px, 90%);
+    max-width: min(840px, 90%);
     color: #ffffff;
 }
 
 .hero-title {
     margin: 0;
-    font-size: 43.94px;
+    font-size: var(--hero-title-size);
     line-height: 1.2;
     font-weight: 700;
 }
 
 .hero-text {
     margin: 0.9rem 0 0;
-    font-size: 27.04px;
+    font-size: var(--hero-subtitle-size);
     line-height: 1.5;
     max-width: 52ch;
+    white-space: pre-line;
 }
 
 .hero-actions {
@@ -90,7 +96,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 126px;
+    width: 11rem;
+    min-width: 11rem;
     padding: 0.62rem 1.15rem;
     border-radius: 8px;
     text-decoration: none;
@@ -116,7 +123,7 @@
 /* Stats Bar - Glassmorphism */
 .stats-bar {
     position: absolute;
-    bottom: 30%;;
+    bottom: 15%;;
     right: clamp(0.8rem, 3.5vw, 2.2rem);
     z-index: 3;
     display: grid;
@@ -129,6 +136,7 @@
     border-radius: 16px;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+    margin-right: 5%;
 }
 
 .stat-item {
@@ -220,12 +228,33 @@
 }
 
 @media (max-width: 768px) {
+    .hero-section {
+        height: auto;
+        min-height: clamp(36rem, 120vw, 44rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .hero-content {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        width: calc(100% - 14%);
+        max-width: none;
+        margin: clamp(1.1rem, 3.5vw, 1.6rem) auto 0;
+        z-index: 2;
+    }
+
     .stats-bar {
+        position: relative;
+        bottom: auto;
+        right: auto;
         grid-template-columns: repeat(2, 1fr);
-        width: min(58vw, 650px);
+        width: calc(100% - 14%);
         padding: clamp(0.6rem, 1.2vw, 0.9rem) clamp(0.8rem, 1.6vw, 1rem);
-        bottom: 30%;
-        right: 1rem;
+        margin: 1rem auto 1.2rem;
     }
 
     .stat-item {
@@ -272,13 +301,6 @@
 }
 
 @media (max-width: 576px) {
-    .hero-content {
-        top: 1.2rem;
-        left: 1rem;
-        right: 1rem;
-        max-width: none;
-    }
-
     .hero-title {
         font-size: 40.56px;
     }
@@ -288,11 +310,9 @@
     }
 
     .hero-btn {
-        min-width: 112px;
+        width: 9.5rem;
+        min-width: 9.5rem;
         font-size: 1.453rem;
     }
 
-    .hero-section {
-        height: 60vh;
-    }
 }

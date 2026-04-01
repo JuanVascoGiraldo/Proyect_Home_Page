@@ -52,8 +52,17 @@
     --color-footer-title: #d4d6da;
     --color-footer-text: #8d9096;
     --color-footer-link: #b5b8be;
-    --hero-overlay-top-size: 25%;
-    --hero-overlay-bottom-size: 25%;
+    --hero-overlay-top-size: 80%;
+    --hero-overlay-bottom-size: 10%;
+
+    /* Shared typography scale for non-hero sections */
+    --section-kicker-size: clamp(2.325rem, 4.2vw, 3.525rem);
+    --section-subtitle-size: clamp(1.5rem, 2.625vw, 2.5rem);
+    --section-text-size: clamp(1.025rem, 1.25vw, 1.25rem);
+
+    /* Shared padding scale for non-hero sections */
+    --section-padding-vertical: clamp(2.2rem, 4.5vw, 4rem);
+    --section-padding-horizontal: 7%;
 }
 
 body {
@@ -79,4 +88,65 @@ textarea {
 
 .page-main {
     flex: 1;
+}
+
+@media (max-height: 1000px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --section-padding-vertical: clamp(1.80rem, 3.50vw, 3.00rem);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-padding-vertical: clamp(1.4rem, 2.8vw, 2rem);
+    }
+
+    .innovation-section,
+    .cargo-tech-section,
+    .logistics-gallery-section,
+    .traceability-section,
+    .security-section,
+    .performance-section,
+    .infrastructure-section {
+        height: auto;
+        min-height: auto;
+    }
+
+    .security-section,
+    .performance-section,
+    .infrastructure-section {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        --section-padding-vertical: 1.5rem;
+        --section-padding-horizontal: 5%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .innovation-section,
+    .cargo-tech-section,
+    .logistics-gallery-section,
+    .traceability-section,
+    .security-section,
+    .performance-section,
+    .infrastructure-section {
+        height: auto;
+        min-height: auto;
+    }
+
+    .security-section,
+    .performance-section,
+    .infrastructure-section {
+        margin-top: 0;
+    }
 }

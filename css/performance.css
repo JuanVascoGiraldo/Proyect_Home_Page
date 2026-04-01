@@ -1,8 +1,7 @@
 .performance-section {
     width: 100%;
-    margin-top: -5%;
-    background: #f4f7f9;
-    padding: clamp(2.2rem, 4.5vw, 4rem) 7% clamp(2.2rem, 4.5vw, 4rem) 6%;
+    background: #eceef1;
+    padding: var(--section-padding-vertical) var(--section-padding-horizontal);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -13,8 +12,8 @@
     width: 100%;
     display: grid;
     grid-template-columns: 60% 40%;
-    align-items: start;
     padding: 0;
+    align-items: center;
     }
 
 .performance-card {
@@ -23,7 +22,8 @@
         background-image: url("../resources/card.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
+    margin-left: -2%;
     }
 
 .performance-cardd {
@@ -34,14 +34,14 @@
 
 .performance-card--text {
     position: relative;
-    padding: 10%;
+    padding: 12%;
     box-shadow: none;
     }
 
 .performance-kicker {
     margin: 0;
     color: #0071bc;
-    font-size: clamp(1.47rem, 1.89vw, 1.89rem);
+    font-size: var(--section-kicker-size);
     font-weight: 800;
     letter-spacing: 0.03em;
     }
@@ -49,7 +49,7 @@
 .performance-title {
     margin: 0.45rem 0 0;
     color: #111318;
-    font-size: clamp(2.03rem, 3.36vw, 2.8rem);
+    font-size: var(--section-subtitle-size);
     line-height: 1.2;
     font-weight: 600;
     }
@@ -57,28 +57,30 @@
 .performance-text {
     margin: 0.95rem 0 0;
     color: #3f4a57;
-    font-size: clamp(1.288rem, 1.512vw, 1.442rem);
+    font-size: var(--section-text-size);
     line-height: 1.72;
     }
 
 .performance-card--checks {
-    padding: clamp(1.215rem, 1.98vw, 1.8rem) clamp(1.08rem, 1.8vw, 1.62rem);
+    padding: clamp(1.215rem, 1.98vw, 1.8rem) clamp(1.2rem, 2.2vw, 2rem);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 80%;
-    justify-self: end;
+    height: 92%;
+    width: 100%;
+    max-width: 44rem;
+    justify-self: center;
     box-sizing: border-box;
     }
 
 .performance-check-list {
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 2.2vw, 2.2rem);
     list-style: none;
     display: grid;
     gap: 0.72rem;
     width: 100%;
+    max-width: 40rem;
     }
 
 .performance-check-list li {
@@ -91,6 +93,12 @@
     font-weight: 500;
     line-height: 1.4;
     }
+
+.performance-check-list li span:last-child {
+    display: block;
+    text-align: justify;
+    text-justify: inter-word;
+}
 
 .performance-check-list .check-icon {
     color: #44c7f4;
@@ -118,6 +126,9 @@
 @media (max-width: 640px) {
 .performance-section {
         padding: 2rem 0;
+    height: auto;
+    min-height: auto;
+    margin-top: 0;
     }
 
 .performance-shell {

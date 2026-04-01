@@ -5,7 +5,7 @@
     width: 100%;
     margin-top: -2px;
     z-index: 1;
-    padding: 0 7%;
+    padding: var(--section-padding-vertical) var(--section-padding-horizontal);
     background: #ffffff;
     height: 80vh;
     display: flex;
@@ -17,7 +17,7 @@
     margin: 0;
     display: grid;
     grid-template-columns: 50% 50%;
-    gap: clamp(2rem, 4vw, 4rem);
+    gap: clamp(1rem, 2vw, 2rem);
     align-items: start;
     padding: 0;
 }
@@ -31,7 +31,7 @@
 .innovation-kicker {
     margin: 0;
     color: #0072bc;
-    font-size: clamp(1.953rem, 3.528vw, 2.961rem);
+    font-size: var(--section-kicker-size);
     letter-spacing: 0.01em;
     text-transform: uppercase;
 }
@@ -39,14 +39,14 @@
 .innovation-title {
     margin: 0.45rem 0 0;
     color: #21252b;
-    font-size: clamp(1.296rem, 2.268vw, 2.16rem);
+    font-size: var(--section-subtitle-size);
     font-weight: 500;
 }
 
 .innovation-text {
     margin: 0.9rem 0 1.8rem;
     color: #6d727a;
-    font-size: clamp(1.033rem, 1.26vw, 1.26rem);
+    font-size: var(--section-text-size);
     line-height: 1.55;
     text-align: justify;
 }
@@ -57,7 +57,7 @@
     background: #0072bc;
     color: #ffffff;
     text-decoration: none;
-    font-size: clamp(0.675rem, 0.855vw, 0.855rem);
+    font-size: clamp(0.81rem, 1.03vw, 1.03rem);
     font-weight: 600;
     border-radius: 0.35rem;
     border: 2px solid #0072bc;
@@ -76,10 +76,9 @@
     display: flex;
     flex-direction: column;
     gap: 0;
-    width: min(100%, 588px);
+    width: min(100%, 600px);
     justify-self: end;
     box-sizing: border-box;
-    padding-right: 7%;
 }
 
 .innovation-item {
@@ -196,9 +195,53 @@
     color: #6d727a;
 }
 
+@media (max-height: 700px) {
+    .innovation-section {
+        height: auto;
+        min-height: auto;
+        padding: 2rem 7%;
+        margin-top: 0;
+    }
+
+    .innovation-shell {
+        grid-template-columns: 1fr;
+        gap: clamp(1.25rem, 2.5vw, 2rem);
+    }
+
+    .innovation-intro,
+    .innovation-accordion {
+        justify-self: stretch;
+        width: 100%;
+    }
+
+    .innovation-intro {
+        padding: 0;
+    }
+}
+
+@media (max-height: 780px) {
+    .innovation-trigger {
+        padding: 0.55rem 0.75rem;
+    }
+
+    .innovation-panel-inner,
+    .innovation-body {
+        padding-top: 0.65rem;
+        padding-bottom: 0.85rem;
+        padding-left: clamp(2.4rem, 5vw, 3.4rem);
+    }
+}
+
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
+    .innovation-section {
+        height: auto;
+        min-height: auto;
+        padding: 2rem 7%;
+        margin-top: 0;
+    }
+
     .innovation-shell {
         grid-template-columns: 1fr;
         gap: clamp(1.5rem, 3vw, 2.5rem);
