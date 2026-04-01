@@ -71,6 +71,9 @@ body {
     background: var(--color1);
     color: var(--color-title);
     font-family: var(--font-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 button,
@@ -82,12 +85,14 @@ textarea {
 
 .page-wrapper {
     min-height: calc(100vh - var(--header-offset));
+    flex: 1 0 auto;
     display: flex;
     flex-direction: column;
+    margin-bottom: 0;
 }
 
 .page-main {
-    flex: 1;
+    flex: 1 0 auto;
 }
 
 @media (max-height: 1000px) {

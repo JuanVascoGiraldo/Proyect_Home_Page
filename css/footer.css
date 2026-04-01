@@ -1,14 +1,17 @@
 .site-footer {
-    margin-top: 0;
-  background-color: var(--color-footer-bg);
-    border-top-left-radius: 26px;
-    border-top-right-radius: 26px;
-    overflow: hidden;
+    margin-top: auto;
+    margin-bottom: 0;
+    width: 100%;
+    background-color: white;
+
 }
 
 .footer-shell {
     width: 100%;
     max-width: none;
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
+    background-color: var(--color-footer-bg);
     padding-left: 7%;
     padding-right: 7%;
     padding-top: 3.2rem;
