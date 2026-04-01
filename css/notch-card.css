@@ -176,7 +176,7 @@
 }
 
 .cargo-btn {
-    margin: 6rem 0 0 0;
+    margin: 0rem 0 0 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -189,6 +189,17 @@
     font-size: clamp(0.84rem, 0.9vw, 0.95rem);
     font-weight: 500;
     max-width: max-content;
+}
+
+.cargo-btn-fixed {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cargo-btn-fixed .cargo-btn {
+    margin: 0;
 }
 
 @media (max-width: 768px) {

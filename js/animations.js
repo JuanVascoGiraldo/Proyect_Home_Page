@@ -136,7 +136,6 @@ function initCargoCarousel() {
   function renderTextSlide(index) {
     const safeIndex = Math.max(0, Math.min(index, slides.length - 1));
     const slide = slides[safeIndex] || slides[0];
-    const cta = getLocalizedCta();
 
     if (!slide) {
       contentMain.innerHTML = '';
@@ -148,7 +147,6 @@ function initCargoCarousel() {
       `  <h3 class="cargo-item-title">${slide.title || ''}</h3>`,
       `  <p class="cargo-description cargo-description-strong">${slide.text1 || ''}</p>`,
       `  <p class="cargo-description">${slide.text2 || ''}</p>`,
-      `  <a href="#" class="cargo-btn">${cta}</a>`,
       '</article>'
     ].join('');
 
@@ -175,6 +173,16 @@ function initCargoCarousel() {
     stepCurrent.textContent = '01';
     stepper.style.setProperty('--progress', '0%');
     renderTextSlide(0);
+
+    // Crear botón fijo fuera de la sección animada
+    const cargoBtnContainer = document.querySelector('.cargo-btn-fixed') || document.createElement('div');
+    cargoBtnContainer.className = 'cargo-btn-fixed';
+    const cta = getLocalizedCta();
+    cargoBtnContainer.innerHTML = `<a href="#" class="cargo-btn">${cta}</a>`;
+    
+    if (!document.querySelector('.cargo-btn-fixed')) {
+      contentMain.parentElement.appendChild(cargoBtnContainer);
+    }
   }
 
   function destroyAnimation() {
@@ -231,6 +239,7 @@ function initCargoCarousel() {
 
     gsap.set(layers, { clipPath: 'inset(0px 0px 0px 0px)' });
     gsap.set(images, { objectPosition: '50% 50%' });
+    gsap.set(contentMain, { opacity: 1 });
 
     // Crear timeline pero PAUSADO inicialmente
     timeline = gsap.timeline({ defaults: { ease: 'none' }, paused: true });
@@ -243,16 +252,19 @@ function initCargoCarousel() {
       const nextImage = images[index + 1];
       const bgColor = backgroundPalette[(index + 1) % backgroundPalette.length];
 
+      // Animación de la capa de imagen (reveal)
       timeline.to(currentLayer, {
         clipPath: 'inset(0px 0px 100% 0px)',
         duration: 1
       }, index);
 
+      // Animación de la posición del objeto en la imagen actual
       timeline.to(currentImage, {
         objectPosition: '50% 66%',
         duration: 1
       }, index);
 
+      // Animación de la posición del objeto en la siguiente imagen
       timeline.fromTo(nextImage, {
         objectPosition: '50% 32%'
       }, {
@@ -260,10 +272,23 @@ function initCargoCarousel() {
         duration: 1
       }, index);
 
+      // Animación fadeOut del texto actual
+      timeline.to(contentMain, {
+        opacity: 0,
+        duration: 0.5
+      }, index);
+
+      // Cambio de color de fondo
       timeline.to([bodyColorTarget, htmlColorTarget], {
         backgroundColor: bgColor,
         duration: 0.22
       }, index + 0.98);
+
+      // Animación fadeIn del nuevo texto
+      timeline.to(contentMain, {
+        opacity: 1,
+        duration: 0.5
+      }, index + 0.5);
     }
 
     function isSectionCentered() {
