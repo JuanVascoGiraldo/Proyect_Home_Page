@@ -55,6 +55,7 @@ function initLenisSmoothScroll() {
 
 function initCargoCarousel() {
   const section = document.querySelector('.cargo-tech-section');
+  const sliderEvent = document.getElementById('Sliderevent');
   const card = document.getElementById('cargoCarousel');
   const mediaWrap = document.querySelector('.cargo-media-wrap');
   const contentMain = document.querySelector('.cargo-content-main');
@@ -62,7 +63,7 @@ function initCargoCarousel() {
   const stepTotal = document.querySelector('.cargo-step-bottom');
   const stepper = document.querySelector('.cargo-stepper');
 
-  if (!section || !card || !mediaWrap || !contentMain || !stepCurrent || !stepper) {
+  if (!section || !sliderEvent || !card || !mediaWrap || !contentMain || !stepCurrent || !stepper) {
     return;
   }
 
@@ -266,11 +267,12 @@ function initCargoCarousel() {
     }
 
     function isSectionCentered() {
-      const rect = section.getBoundingClientRect();
+      const rect = sliderEvent.getBoundingClientRect();
       const vh = window.innerHeight || document.documentElement.clientHeight;
-      const topLimit = vh * 0.2;
-      const bottomLimit = vh * 0.8;
-      return rect.top <= topLimit && rect.bottom >= bottomLimit;
+
+      // Activa cuando Sliderevent está realmente en pantalla,
+      // evitando la condición anterior que era demasiado estricta.
+      return rect.top < vh * 0.9 && rect.bottom > vh * 0.1;
     }
 
     const progressState = { value: progressValue };
@@ -316,7 +318,7 @@ function initCargoCarousel() {
 
     // Crear ScrollTrigger para activar la animación cuando la sección entra en el viewport
     scrollTriggerInstance = window.ScrollTrigger.create({
-      trigger: section,
+      trigger: sliderEvent,
       start: "top 85%", // Cuando el top de la sección alcanza el 85% del viewport
       end: "bottom 15%", // Hasta que el bottom alcanza el 15% del viewport
       onEnter: () => {
@@ -345,9 +347,9 @@ function initCargoCarousel() {
       }
     });
 
-    section.addEventListener('wheel', onSectionWheel, { passive: false });
+    sliderEvent.addEventListener('wheel', onSectionWheel, { passive: false });
     unbindInteractions = function () {
-      section.removeEventListener('wheel', onSectionWheel);
+      sliderEvent.removeEventListener('wheel', onSectionWheel);
       if (progressTween) {
         progressTween.kill();
         progressTween = null;
