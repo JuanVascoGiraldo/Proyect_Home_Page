@@ -1,8 +1,8 @@
 .traceability-section {
     width: 100%;
     padding: var(--section-padding-vertical) clamp(1rem, 2.2vw, 1.6rem) clamp(3rem, 5vw, 4rem);
-    background: #d2d4d7;
-    border: 1px solid #d2d4d7;
+    background: #eceef1;
+    border: 1px solid #eceef1;
     border-bottom: none;
     box-shadow: 0 -8px 14px -14px rgba(18, 26, 40, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.55);
     position: relative;

@@ -1,13 +1,22 @@
 .site-header {
-    background: rgba(44, 59, 99, 0.7);
+    background: rgba(44, 59, 99, 0.4);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(44, 59, 99, 0.1);
+    /* border-bottom: 1px solid rgba(44, 59, 99, 0.1); */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1030;
+    /* background: linear-gradient(
+        to bottom,
+        var(--color1) 0%,
+        rgba(44, 59, 99, 0.95) 10%,
+        rgba(44, 59, 99, 0.75) 60%,
+        rgba(44, 59, 99, 0.4) 70%,
+        rgba(44, 59, 99, 0.15) 80%,
+        rgba(44, 59, 99, 0) 100%
+    ); */
 }
 
 .header-shell {
@@ -33,7 +42,7 @@
     height: clamp(3.8rem, 7.2vw, 5.8rem);
     width: auto;
     object-fit: contain;
-    
+
 }
 
 
@@ -93,17 +102,16 @@
 .locale-country,
 .lang-select {
     color: #ffffff;
-    font-size: 0.95rem;
+    font-size: 0.75rem;
     letter-spacing: 0.04rem;
-    font-weight: 400;
 }
 
 .locale-country {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    font-weight: 400;
-    font-size: 0.95rem;
+    /* font-weight: 400; */
+    font-size: 0.75rem;
 }
 
 .locale-country svg {
