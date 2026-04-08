@@ -1,5 +1,4 @@
 .site-footer {
-    margin-top: auto;
     margin-bottom: 0;
     width: 100%;
     background-color: white;
@@ -13,11 +12,11 @@
     border-top-right-radius: 26px;
     background-color: var(--color-footer-bg);
     padding-left: 7%;
-    padding-right: 7%;
+    padding-right: 10%;
     padding-top: 3.2rem;
     padding-bottom: 2.8rem;
     display: grid;
-    grid-template-columns: 1fr auto 5% auto;
+    grid-template-columns: 1fr auto 10% auto;
     column-gap: 0;
 }
 
@@ -143,8 +142,8 @@
 }
 
 .footer-social svg {
-    width: 0.85rem;
-    height: 0.85rem;
+    width: 10rem;
+    height: 10rem;
     fill: currentColor;
     stroke: none;
 }

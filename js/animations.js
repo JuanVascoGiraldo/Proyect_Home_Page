@@ -121,6 +121,10 @@ function initCargoCarousel() {
   let unbindInteractions = null;
   let isAnimating = false; // Controla si la animación está activa
   let scrollTriggerInstance = null; // Instancia de ScrollTrigger
+  let cargoTextTitle = null;
+  let cargoTextStrong = null;
+  let cargoTextBody = null;
+  let cargoCtaButton = null;
 
   function updateStepper(progress) {
     const normalized = Math.max(0, Math.min(1, progress));
@@ -137,18 +141,14 @@ function initCargoCarousel() {
     const safeIndex = Math.max(0, Math.min(index, slides.length - 1));
     const slide = slides[safeIndex] || slides[0];
 
-    if (!slide) {
-      contentMain.innerHTML = '';
+    if (!slide || !cargoTextTitle || !cargoTextStrong || !cargoTextBody || !cargoCtaButton) {
       return;
     }
 
-    contentMain.innerHTML = [
-      '<article class="cargo-text-active">',
-      `  <h3 class="cargo-item-title">${slide.title || ''}</h3>`,
-      `  <p class="cargo-description cargo-description-strong">${slide.text1 || ''}</p>`,
-      `  <p class="cargo-description">${slide.text2 || ''}</p>`,
-      '</article>'
-    ].join('');
+    cargoTextTitle.textContent = slide.title || '';
+    cargoTextStrong.textContent = slide.text1 || '';
+    cargoTextBody.textContent = slide.text2 || '';
+    cargoCtaButton.textContent = getLocalizedCta();
 
     activeTextIndex = safeIndex;
   }
@@ -172,17 +172,30 @@ function initCargoCarousel() {
     }
     stepCurrent.textContent = '01';
     stepper.style.setProperty('--progress', '0%');
-    renderTextSlide(0);
 
-    // Crear botón fijo fuera de la sección animada
-    const cargoBtnContainer = document.querySelector('.cargo-btn-fixed') || document.createElement('div');
-    cargoBtnContainer.className = 'cargo-btn-fixed';
-    const cta = getLocalizedCta();
-    cargoBtnContainer.innerHTML = `<a href="#" class="cargo-btn">${cta}</a>`;
-    
-    if (!document.querySelector('.cargo-btn-fixed')) {
-      contentMain.parentElement.appendChild(cargoBtnContainer);
-    }
+    contentMain.innerHTML = `
+      <div class="cargo-text-active">
+        <h3 class="cargo-item-title"></h3>
+        <p class="cargo-description cargo-description-strong"></p>
+        <p class="cargo-description"></p>
+        <br><br><br><br><br>
+        <br>
+      </div>
+      <div class="cargo-btn-fixed">
+        <a href="#" class="cargo-btn"></a>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+    `;
+
+    cargoTextTitle = contentMain.querySelector('.cargo-text-active .cargo-item-title');
+    cargoTextStrong = contentMain.querySelector('.cargo-text-active .cargo-description-strong');
+    cargoTextBody = contentMain.querySelector('.cargo-text-active .cargo-description:not(.cargo-description-strong)');
+    cargoCtaButton = contentMain.querySelector('.cargo-btn-fixed .cargo-btn');
+
+    renderTextSlide(0);
   }
 
   function destroyAnimation() {
@@ -228,6 +241,7 @@ function initCargoCarousel() {
     const gsap = window.gsap;
     const layers = Array.from(mediaWrap.querySelectorAll('.cargo-media-layer'));
     const images = Array.from(mediaWrap.querySelectorAll('.cargo-media'));
+    const textActive = contentMain.querySelector('.cargo-text-active');
 
     destroyAnimation();
 
@@ -239,7 +253,7 @@ function initCargoCarousel() {
 
     gsap.set(layers, { clipPath: 'inset(0px 0px 0px 0px)' });
     gsap.set(images, { objectPosition: '50% 50%' });
-    gsap.set(contentMain, { opacity: 1 });
+    gsap.set(textActive, { opacity: 1 });
 
     // Crear timeline pero PAUSADO inicialmente
     timeline = gsap.timeline({ defaults: { ease: 'none' }, paused: true });
@@ -273,7 +287,7 @@ function initCargoCarousel() {
       }, index);
 
       // Animación fadeOut del texto actual
-      timeline.to(contentMain, {
+      timeline.to(textActive, {
         opacity: 0,
         duration: 0.5
       }, index);
@@ -285,7 +299,7 @@ function initCargoCarousel() {
       }, index + 0.98);
 
       // Animación fadeIn del nuevo texto
-      timeline.to(contentMain, {
+      timeline.to(textActive, {
         opacity: 1,
         duration: 0.5
       }, index + 0.5);

@@ -41,14 +41,17 @@
     color: #21252b;
     font-size: var(--section-subtitle-size);
     font-weight: 500;
+    white-space: pre-line;
+    line-height: 1.2;
 }
 
 .innovation-text {
-    margin: 0.9rem 0 1.8rem;
+    margin: 0.9rem 4.3rem 5.4rem 0;
     color: #6d727a;
     font-size: var(--section-text-size);
     line-height: 1.55;
     text-align: justify;
+    white-space: pre-line;
 }
 
 .innovation-btn {
@@ -100,7 +103,6 @@
     padding: clamp(0.6rem, 1.1vw, 0.9rem) clamp(0.7rem, 1.2vw, 1rem);
     background: transparent;
     border: none;
-    border-bottom: 1px solid #d5d8de;
     border-radius: 0;
     color: #21252b;
     font-size: clamp(0.919rem, 1.225vw, 1.122rem);
@@ -116,9 +118,14 @@
     border-color: transparent;
 }
 
+.innovation-trigger:not(.collapsed) {
+    border-bottom: none;
+}
+
 .innovation-trigger.collapsed {
     background: transparent;
     color: #21252b;
+    border-bottom: 1px solid #acaeb3;
 }
 
 .innovation-trigger::after {
@@ -129,12 +136,13 @@
     flex-shrink: 0;
     font-weight: 600;
     color: #0072bc;
-    font-size: clamp(1.247rem, 2.041vw, 1.814rem);
+    font-size: clamp(1.2rem, 1.9vw, 1.7rem);
 }
 
 .innovation-item-title {
     flex: 1;
     padding: 0 clamp(0.5rem, 1vw, 1rem);
+    font-size: clamp(1.1rem, 1.4vw, 1.4rem);
 }
 
 .innovation-icon {

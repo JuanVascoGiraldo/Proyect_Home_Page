@@ -1,20 +1,21 @@
 .traceability-section {
     width: 100%;
     padding: var(--section-padding-vertical) clamp(1rem, 2.2vw, 1.6rem) clamp(3rem, 5vw, 4rem);
-    background: #eceef1;
-    border: 1px solid #e1e3e8;
-    box-shadow: 0 -8px 14px -14px rgba(18, 26, 40, 0.5), 0 20px 30px -18px rgba(18, 26, 40, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    background: #d2d4d7;
+    border: 1px solid #d2d4d7;
+    border-bottom: none;
+    box-shadow: 0 -8px 14px -14px rgba(18, 26, 40, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.55);
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
     clip-path: url(#simplex-2-clip);
     }
 
 .traceability-shell {
-    width: min(1320px, 100% - 4rem);
+    width: min(1020px, 100% - 6rem);
     margin: 0 auto;
     }
 
@@ -64,6 +65,7 @@
     justify-content: flex-start;
     text-align: center;
     row-gap: 0.8rem;
+    white-space: pre-line;
     }
 
 .trace-item img {
@@ -75,7 +77,6 @@
 
 .trace-item span {
     color: #21262f;
-    font-family: "Montserrat", "Figtree", sans-serif;
     font-size: clamp(0.88rem, 1vw, 1rem);
     font-weight: 500;
     text-transform: capitalize;
@@ -85,7 +86,7 @@
 .traceability-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-    }
+}
 
 @media (max-width: 640px) {
 .traceability-shell {

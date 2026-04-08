@@ -2,15 +2,15 @@ window.pageTexts = window.pageTexts || {};
 
 window.pageTexts.services = {
   es: {
-    introTitle: 'MERCANCIA',
-    introSubtitle: 'Soluciones especializadas para cada tipo',
-    introText: 'Cada mercado enfrenta retos logisticos unicos, hemos desarrollado divisiones especializadas con expertos dedicados a optimizar la cadena de suministro de los sectores mas exigentes del mercado, nuestra experiencia operativa nos permite ofrecer eficiencia, cumplimiento normativo y visibilidad total.',
+    introTitle: 'MERCANCÍA',
+    introSubtitle: 'Soluciones especializadas',
+    introText: 'Cada mercado enfrenta retos logísticos únicos, hemos desarrollado divisiones especializadas con expertos dedicados a optimizar la cadena de suministro de los sectores más exigentes del mercado, nuestra experiencia operativa nos permite ofrecer eficiencia, cumplimiento normativo y visibilidad total.',
     introCta: 'Servicios',
     cards: [
       {
         title: 'Hazmat',
         subtitle: 'Sustancias peligrosas',
-        text: 'Logistica de sustancias peligrosas. Un sistema que combina tecnologia, protocolos de seguridad y personal capacitado para reducir riesgos al minimo.'
+        text: 'Logística de sustancias peligrosas. Un sistema que combina tecnología, protocolos de seguridad y personal capacitado para reducir riesgos al mínimo.'
       },
       {
         title: 'Control Tower',
@@ -25,18 +25,18 @@ window.pageTexts.services = {
       {
         title: 'Warehousing',
         subtitle: 'Almacenamiento flexible',
-        text: 'Infraestructura flexible para inventario, picking y preparacion de pedidos.'
+        text: 'Infraestructura flexible para inventario, picking y preparación de pedidos.'
       },
       {
         title: 'Freight Management',
-        subtitle: 'Planeacion de rutas',
-        text: 'Planeacion de rutas y control operativo para entregas de alto cumplimiento.'
+        subtitle: 'Planeación de rutas',
+        text: 'Planeación de rutas y control operativo para entregas de alto cumplimiento.'
       }
     ]
   },
   en: {
     introTitle: 'CARGO',
-    introSubtitle: 'Specialized solutions for every type',
+    introSubtitle: 'Specialized solutions',
     introText: 'Each market faces unique logistics challenges. We have developed specialized divisions with dedicated experts to optimize supply chains for the most demanding industries, delivering efficiency, regulatory compliance and full visibility.',
     introCta: 'Services',
     cards: [

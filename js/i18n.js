@@ -206,12 +206,12 @@
   function applyFooter(lang) {
     const data = getSection('footer', lang);
 
-    const footerMeta = document.querySelector('.footer-meta');
-    if (footerMeta && data.copyrightPrefix && data.privacy) {
-      footerMeta.innerHTML = `${data.copyrightPrefix} <a href="#" class="footer-inline-link">${data.privacy}</a>`;
+    const footerMeta = document.querySelector('.footer-address');
+    if (footerMeta && data.address && data.privacy) {
+      footerMeta.innerHTML = `${data.address} &nbsp; &nbsp; &nbsp;&nbsp; <a href="#" class="footer-inline-link">${data.privacy}</a>`;
     }
 
-    setNodeText(document.querySelector('.footer-address'), data.address);
+    setNodeText(document.querySelector('.footer-meta'), data.copyrightPrefix);
 
     const footerTitles = document.querySelectorAll('.footer-title');
     if (footerTitles[0]) {

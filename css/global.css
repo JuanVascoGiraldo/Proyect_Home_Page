@@ -26,7 +26,7 @@
 }
 
 :root {
-    --font-primary: "Figtree", sans-serif;
+    /* --font-primary: "Figtree", sans-serif; */
     --color1: #2C3B63;
     --color2: #A8C2E4;
     --color3: #4071B8;
@@ -53,7 +53,7 @@
     --color-footer-text: #8d9096;
     --color-footer-link: #b5b8be;
     --hero-overlay-top-size: 80%;
-    --hero-overlay-bottom-size: 10%;
+    --hero-overlay-bottom-size: 25%;
 
     /* Shared typography scale for non-hero sections */
     --section-kicker-size: clamp(2.325rem, 4.2vw, 3.525rem);
@@ -70,7 +70,7 @@ body {
     padding-top: var(--header-offset);
     background: var(--color1);
     color: var(--color-title);
-    font-family: var(--font-primary);
+    /* font-family: var(--font-primary); */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -80,7 +80,7 @@ button,
 input,
 select,
 textarea {
-    font-family: var(--font-primary);
+    /* font-family: var(--font-primary); */
 }
 
 .page-wrapper {

@@ -60,16 +60,15 @@
     justify-self: end;
     display: flex;
     align-items: center;
-    gap: clamp(1rem, 1.6vw, 1.7rem);
-    margin-right: 10%;
+    gap: clamp(2rem, 3.2vw, 3.4rem);
+    margin-right: 5%;
 }
 
 .main-nav .nav-link {
     color: #ffffff;
     text-decoration: none;
     font-size: 0.95rem;
-    letter-spacing: 0.06rem;
-    font-weight: 600;
+    font-weight: 400;
     transition: color 0.2s ease, font-weight 0.2s ease;
 }
 
@@ -77,7 +76,7 @@
 .main-nav .nav-link:focus-visible,
 .main-nav .nav-link.is-active {
     color: #ffffff;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .locale-tools {
@@ -87,6 +86,8 @@
     gap: 0.6rem;
     margin-left: 0;
     margin-right: 7%;
+
+
 }
 
 .locale-country,
@@ -94,18 +95,20 @@
     color: #ffffff;
     font-size: 0.95rem;
     letter-spacing: 0.04rem;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .locale-country {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
+    font-weight: 400;
+    font-size: 0.95rem;
 }
 
 .locale-country svg {
-    width: 0.9rem;
-    height: 0.9rem;
+    width: 0.99rem;
+    height: 0.99rem;
     fill: none;
     stroke: currentColor;
     stroke-width: 1.5;
@@ -123,28 +126,29 @@
     border:none;
     background:none;
     border-radius: 999px;
-    padding: 0.28rem 1.7rem 0.28rem 0.75rem;
+    /* padding: 0.28rem 1.7rem 0.28rem 0.75rem; */
     cursor: pointer;
     outline: none;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-    background-image:
+    /* appearance: none; */
+    /* -webkit-appearance: none;
+    -moz-appearance: none; */
+    /* backdrop-filter: blur(6px); */
+    /* -webkit-backdrop-filter: blur(8px); */
+    /* transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease; */
+    /* background: none; */
+    /* background-image:
         linear-gradient(45deg, transparent 50%, #2d79c1 50%),
-        linear-gradient(135deg, #cbe6ff 50%, transparent 50%);
-    background-position:
+        linear-gradient(135deg, #cbe6ff 50%, transparent 50%); */
+    /* background-position:
         calc(100% - 0.85rem) calc(50% - 0.08rem),
-        calc(100% - 0.6rem) calc(50% - 0.08rem);
-    background-size: 0.26rem 0.26rem, 0.26rem 0.26rem;
+        calc(100% - 0.6rem) calc(50% - 0.08rem); */
+    /* background-size: 0.26rem 0.26rem, 0.26rem 0.26rem; */
     background-repeat: no-repeat;
 }
 
 .lang-select:focus,
 .lang-select:focus-visible {
-    background-color: rgba(18, 60, 116, 0.42);
+    /* background-color: rgba(18, 60, 116, 0.42); */
 }
 
 .lang-select option {

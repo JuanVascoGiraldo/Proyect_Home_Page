@@ -1,8 +1,8 @@
 .performance-section {
     width: 100%;
-    background: #eceef1;
+    background: #d2d4d7;
     padding: var(--section-padding-vertical) var(--section-padding-horizontal);
-    height: 100vh;
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,35 +34,37 @@
 
 .performance-card--text {
     position: relative;
-    padding: 12%;
+    padding: 9% 12% 14%;
     box-shadow: none;
+    white-space: pre-line;
     }
 
 .performance-kicker {
     margin: 0;
     color: #0071bc;
     font-size: var(--section-kicker-size);
-    font-weight: 800;
-    letter-spacing: 0.03em;
+    font-weight: 500;
     }
 
 .performance-title {
-    margin: 0.45rem 0 0;
+    margin: -1.4rem 0 0;
     color: #111318;
     font-size: var(--section-subtitle-size);
-    line-height: 1.2;
-    font-weight: 600;
+    font-weight: 400;
     }
 
 .performance-text {
-    margin: 0.95rem 0 0;
+    margin: 1rem 2rem 0 0;
     color: #3f4a57;
     font-size: var(--section-text-size);
-    line-height: 1.72;
-    }
+    /* line-height: 1.72; */
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 
 .performance-card--checks {
-    padding: clamp(1.215rem, 1.98vw, 1.8rem) clamp(1.2rem, 2.2vw, 2rem);
+    padding: clamp(1.215rem, 1.98vw, 1.8rem) clamp(2.2rem, 4.0vw, 3.6rem);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,7 +77,7 @@
 
 .performance-check-list {
     margin: 0 auto;
-    padding: 0 clamp(1rem, 2.2vw, 2.2rem);
+    padding: 0 clamp(2.4rem, 5.2vw, 5.2rem);
     list-style: none;
     display: grid;
     gap: 0.72rem;

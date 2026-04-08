@@ -4,7 +4,7 @@ window.pageTexts.security = {
   es: {
     kicker: 'SEGURIDAD',
     title: 'Nuestra Prioridad',
-    text: 'La seguridad logistica ha evolucionado de ser una medida reactiva a una estrategia integral proactiva, impulsada por la inteligencia artificial y la ciberseguridad avanzada para proteger la integridad de toda la cadena de suministro.',
+    text: 'La seguridad logística ha evolucionado de ser una medida reactiva a una estrategia integral proactiva, impulsada por la inteligencia artificial y la ciberseguridad avanzada para proteger la integridad de toda la cadena de suministro.',
     cta: 'Cotizar',
     listTitle: 'Controles Clave',
     controls: [

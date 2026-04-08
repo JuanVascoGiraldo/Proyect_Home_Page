@@ -4,8 +4,8 @@
     position: relative;
     overflow: hidden;
     isolation: isolate;
-    --hero-title-size: clamp(2.4rem, 5.5vw, 2.75rem);
-    --hero-subtitle-size: clamp(1.4rem, 3.2vw, 1.7rem);
+    --hero-title-size: clamp(3.2rem, 7.4vw, 3.7rem);
+    --hero-subtitle-size: clamp(1.0rem, 2.4vw, 1.3rem);
     --hero-text-size: clamp(0.95rem, 1.2vw, 1.1rem);
 }
 
@@ -63,10 +63,10 @@
 
 .hero-content {
     position: absolute;
-    top: 15%;
+    top: 20%;
     left: 7%;
     z-index: 2;
-    max-width: min(840px, 90%);
+    max-width: min(940px, 90%);
     color: #ffffff;
 }
 
@@ -78,10 +78,10 @@
 }
 
 .hero-text {
-    margin: 0.9rem 0 0;
+    margin: 1.4rem 0;
     font-size: var(--hero-subtitle-size);
     line-height: 1.5;
-    max-width: 52ch;
+    /* max-width: 52ch; */
     white-space: pre-line;
 }
 
@@ -98,11 +98,11 @@
     justify-content: center;
     width: 11rem;
     min-width: 11rem;
-    padding: 0.62rem 1.15rem;
+    padding: 0.3rem 1.15rem;
     border-radius: 8px;
     text-decoration: none;
-    font-size: 1.521rem;
-    font-weight: 600;
+    font-size:  var(--hero-subtitle-size);
+    /* font-weight: 600; */
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .hero-btn-primary {
@@ -112,8 +112,8 @@
 }
 
 .hero-arrow {
-    width: 1rem;
-    height: 1rem;
+    width: 2rem;
+    height: 2rem;
     margin-left: 0.5rem;
     display: inline-block;
     vertical-align: middle;
@@ -123,7 +123,7 @@
 /* Stats Bar - Glassmorphism */
 .stats-bar {
     position: absolute;
-    bottom: 15%;;
+    bottom: 30%;
     right: clamp(0.8rem, 3.5vw, 2.2rem);
     z-index: 3;
     display: grid;
@@ -206,12 +206,13 @@
 }
 
 .stat-label {
-    font-size: clamp(0.884rem, 1.495vw, 1.105rem);
+    font-size: clamp(0.8rem, 1.3vw, 0.99rem);
     color: #ffffff;
     line-height: 1.25;
     opacity: 0.85;
     font-weight: 500;
     max-width: 100%;
+    white-space: pre-line;
 }
 
 @media (max-width: 1200px) {

@@ -2,13 +2,13 @@ window.pageTexts = window.pageTexts || {};
 
 window.pageTexts.header = {
   es: {
-    nav: ['INICIO', 'NOSOTROS', 'SERVICIOS', 'VERTICALES', 'CONTACTO'],
-    country: 'MEXICO',
+    nav: ['Inicio', 'Nosotros', 'Servicios', 'Verticales', 'Contacto'],
+    country: 'Mexico',
     langLabel: 'ESP'
   },
   en: {
-    nav: ['HOME', 'ABOUT US', 'SERVICES', 'VERTICALS', 'CONTACT'],
-    country: 'MEXICO',
+    nav: ['Home', 'About Us', 'Services', 'Verticals', 'Contact'],
+    country: 'Mexico',
     langLabel: 'ENG'
   }
 };

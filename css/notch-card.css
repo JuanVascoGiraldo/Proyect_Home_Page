@@ -1,7 +1,8 @@
 .cargo-tech-section {
+    --cargo-media-height: clamp(306px, 50.5vh, 629px);
     width: 100%;
-    padding: 7% 7%;
-    background: #eceef1;
+    padding: 3% 7% 3%;
+    background: #d2d4d7;
     border: 1px solid #e1e3e8;
     box-shadow: 0 -8px 14px -14px rgba(18, 26, 40, 0.5), 0 20px 30px -18px rgba(18, 26, 40, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.55), inset 0 14px 22px -20px rgba(18, 26, 40, 0.28), inset 0 -14px 20px -16px rgba(18, 26, 40, 0.3);
     position: relative;
@@ -17,7 +18,7 @@
 .cargo-tech-header {
     text-align: center;
     max-width: 90rem;
-    margin: 0 auto clamp(1.8rem, 3vw, 2.7rem);
+    margin: 0 auto 0;
     position: relative;
     z-index: 3;
 }
@@ -37,7 +38,7 @@
     font-size: var(--section-kicker-size);
     letter-spacing: 0.01em;
     text-transform: uppercase;
-    }
+}
 
 .cargo-subtitle {
     margin: 0.45rem 0 0;
@@ -52,7 +53,7 @@
     color: #6d727a;
     font-size: var(--section-text-size);
     line-height: 1.55;
-    text-align: justify;
+    text-align: center;
 }
 
 .cargo-media-wrap {
@@ -62,7 +63,12 @@
     align-self: center;
     border-radius: 0.9rem;
     overflow: hidden;
-    height: clamp(306px, 59.5vh, 629px);
+    height: var(--cargo-media-height);
+}
+
+#Sliderevent {
+    max-height: var(--cargo-media-height);
+    overflow: hidden;
 }
 
 .cargo-media-stack {
@@ -72,7 +78,7 @@
 }
 
 .cargo-media-layer {
-    background-color: #eceef1;
+    background-color: #d2d4d7;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -83,7 +89,7 @@
 }
 
 .cargo-media {
-    width: 80%;
+    width: 73%;
     object-fit: cover;
     display: block;
     will-change: object-position;
@@ -94,6 +100,7 @@
     grid-template-columns: 1fr auto;
     gap: 1.2rem;
     align-items: center;
+    background-color: #d2d4d7;
 }
 
 .cargo-content-main {
@@ -176,7 +183,7 @@
 }
 
 .cargo-btn {
-    margin: 0rem 0 0 0;
+    margin: -5rem 0 0 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -192,7 +199,7 @@
 }
 
 .cargo-btn-fixed {
-    margin-top: 2rem;
+    margin-top: 0.9rem;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -204,6 +211,7 @@
 
 @media (max-width: 768px) {
     .cargo-tech-section {
+        --cargo-media-height: 289px;
         padding: 2rem 1rem;
         clip-path: polygon(
             0% 2%,
@@ -243,7 +251,7 @@
 
     .cargo-media-wrap {
         width: 85%;
-        height: 289px;
+        height: var(--cargo-media-height);
     }
 
     .cargo-content {
