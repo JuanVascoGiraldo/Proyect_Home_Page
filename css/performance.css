@@ -2,7 +2,8 @@
     width: 100%;
     background: #eceef1;
     padding: var(--section-padding-vertical) var(--section-padding-horizontal);
-    height: 75vh;
+    height: auto;
+    min-height: clamp(40rem, 75svh, 52rem);
     display: flex;
     align-items: center;
     justify-content: center;

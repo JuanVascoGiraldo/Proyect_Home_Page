@@ -10,7 +10,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: auto;
+    min-height: clamp(42rem, 80svh, 54rem);
     clip-path: url(#simplex-2-clip);
     }
 
@@ -90,7 +91,7 @@
 
 @media (max-width: 640px) {
 .traceability-shell {
-        width: min(1320px, 100% - 2rem);
+    width: min(1320px, 100% - 1rem);
     }
 
 .traceability-section {

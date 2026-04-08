@@ -1,6 +1,7 @@
 .hero-section {
     /* margin-top: -1px; */
-    height: 85vh;
+    height: 85svh;
+    min-height: clamp(42rem, 85svh, 58rem);
     position: relative;
     overflow: hidden;
     isolation: isolate;
@@ -63,7 +64,7 @@
 
 .hero-content {
     position: absolute;
-    top: 20%;
+    top: clamp(14%, 18vh, 22%);
     left: 7%;
     z-index: 2;
     max-width: min(940px, 90%);
@@ -123,7 +124,7 @@
 /* Stats Bar - Glassmorphism */
 .stats-bar {
     position: absolute;
-    bottom: 30%;
+    bottom: clamp(9%, 14vh, 30%);
     right: clamp(0.8rem, 3.5vw, 2.2rem);
     z-index: 3;
     display: grid;
@@ -256,6 +257,14 @@
         width: calc(100% - 14%);
         padding: clamp(0.6rem, 1.2vw, 0.9rem) clamp(0.8rem, 1.6vw, 1rem);
         margin: 1rem auto 1.2rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2.45rem, 8vw, 3.4rem);
+    }
+
+    .hero-text {
+        font-size: clamp(0.98rem, 3.2vw, 1.18rem);
     }
 
     .stat-item {

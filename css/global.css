@@ -47,7 +47,7 @@
     --color-header-text-soft: white;
     --color-header-active: #ffffff;
     --color-brand-mark: var(--color3);
-    --header-offset: 96px;
+    --header-offset: clamp(84px, 8.5vw, 112px);
     --color-footer-bg: #050505;
     --color-footer-title: #d4d6da;
     --color-footer-text: #8d9096;
@@ -56,13 +56,17 @@
     --hero-overlay-bottom-size: 25%;
 
     /* Shared typography scale for non-hero sections */
-    --section-kicker-size: clamp(2.325rem, 4.2vw, 3.525rem);
-    --section-subtitle-size: clamp(1.5rem, 2.625vw, 2.5rem);
-    --section-text-size: clamp(1.025rem, 1.25vw, 1.25rem);
+    --section-kicker-size: clamp(1.9rem, 3.6vw, 3.4rem);
+    --section-subtitle-size: clamp(1.35rem, 2.45vw, 2.35rem);
+    --section-text-size: clamp(0.98rem, 1.15vw, 1.18rem);
 
     /* Shared padding scale for non-hero sections */
-    --section-padding-vertical: clamp(2.2rem, 4.5vw, 4rem);
+    --section-padding-vertical: clamp(1.8rem, 4vw, 3.8rem);
     --section-padding-horizontal: 7%;
+}
+
+html {
+    font-size: clamp(15px, 0.35vw + 13px, 18px);
 }
 
 body {
@@ -103,13 +107,15 @@ textarea {
 
 @media (max-width: 1024px) {
     :root {
-        --section-padding-vertical: clamp(1.80rem, 3.50vw, 3.00rem);
+        --section-padding-vertical: clamp(1.6rem, 3.3vw, 2.8rem);
+        --section-padding-horizontal: clamp(1rem, 3.5vw, 5.5%);
     }
 }
 
 @media (max-width: 768px) {
     :root {
-        --section-padding-vertical: clamp(1.4rem, 2.8vw, 2rem);
+        --section-padding-vertical: clamp(1.25rem, 2.8vw, 2rem);
+        --section-padding-horizontal: 1rem;
     }
 
     .innovation-section,
@@ -132,8 +138,8 @@ textarea {
 
 @media (max-width: 640px) {
     :root {
-        --section-padding-vertical: 1.5rem;
-        --section-padding-horizontal: 5%;
+        --section-padding-vertical: 1.4rem;
+        --section-padding-horizontal: 0.9rem;
     }
 }
 

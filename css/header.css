@@ -53,14 +53,14 @@
 }
 
 .brand-text {
-    font-size: 1.84rem;
+    font-size: clamp(1.45rem, 2.5vw, 1.84rem);
     letter-spacing: 0.13rem;
     font-weight: 700;
 }
 
 .brand-subtext {
     margin-top: 0.1rem;
-    font-size: 0.46rem;
+    font-size: clamp(0.42rem, 0.9vw, 0.58rem);
     letter-spacing: 0.34rem;
     color: var(--color-header-text-soft);
 }
@@ -76,7 +76,7 @@
 .main-nav .nav-link {
     color: #ffffff;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
     font-weight: 400;
     transition: color 0.2s ease, font-weight 0.2s ease;
 }
@@ -102,7 +102,7 @@
 .locale-country,
 .lang-select {
     color: #ffffff;
-    font-size: 0.75rem;
+    font-size: clamp(0.7rem, 0.85vw, 0.75rem);
     letter-spacing: 0.04rem;
 }
 
@@ -111,7 +111,7 @@
     align-items: center;
     gap: 0.4rem;
     /* font-weight: 400; */
-    font-size: 0.75rem;
+    font-size: clamp(0.7rem, 0.85vw, 0.75rem);
 }
 
 .locale-country svg {
