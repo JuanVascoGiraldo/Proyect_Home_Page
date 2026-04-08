@@ -1,7 +1,7 @@
 .cargo-tech-section {
     --cargo-media-height: clamp(306px, 50.5vh, 629px);
     width: 100%;
-    padding: 3% 7% 3%;
+    padding: 3% 11% 3%;
     background: #eceef1;
     border: 1px solid #e1e3e8;
     box-shadow: 0 -8px 14px -14px rgba(18, 26, 40, 0.5), 0 20px 30px -18px rgba(18, 26, 40, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.55), inset 0 14px 22px -20px rgba(18, 26, 40, 0.28), inset 0 -14px 20px -16px rgba(18, 26, 40, 0.3);
@@ -99,7 +99,7 @@
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 1.2rem;
-    align-items: center;
+    align-items: start;
     background-color: #eceef1;
 }
 
@@ -153,8 +153,8 @@
 
 .cargo-stepper {
     --progress: 0%;
-    position: sticky;
-    top: calc(var(--header-offset) + 1.5rem);
+    position: relative;
+    top: 10%;
     min-width: 2.8rem;
     min-height: clamp(16.8rem, 28.8vh, 22.8rem);
     max-height: 100%;
@@ -191,11 +191,12 @@
     background: #0072bc;
     border: 1px solid #0072bc;
     color: #ffffff;
-    padding: 0.55rem 1.2rem;
-    border-radius: 0.45rem;
-    font-size: clamp(0.84rem, 0.9vw, 0.95rem);
+    width: clamp(9.5rem, 15vw, 11rem);
+    min-width: clamp(9.5rem, 15vw, 11rem);
+    padding: 0.3rem 1.15rem;
+    font-size: clamp(1.0rem, 2.4vw, 1.3rem);
     font-weight: 500;
-    max-width: max-content;
+    border-radius: 8px;
 }
 
 .cargo-btn-fixed {
@@ -203,6 +204,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    border-radius: 8px;
 }
 
 .cargo-btn-fixed .cargo-btn {

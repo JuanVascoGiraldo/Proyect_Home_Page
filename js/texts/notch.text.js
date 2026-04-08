@@ -5,7 +5,7 @@ window.pageTexts.notch = {
     kicker: 'VERTICALES',
     subtitle: 'Servicios diferenciados por sector',
     lead: 'Cada mercado enfrenta retos logísticos únicos, hemos desarrollado divisiones especializadas con expertos dedicados a optimizar la cadena de suministro de los sectores más exigentes del mercado, nuestra experiencia operativa nos permite ofrecer eficiencia, cumplimiento normativo y visibilidad total.',
-    cta: 'Conoce nuestras soluciones',
+    cta: 'Soluciones',
     stepTotal: '06',
     slides: [
       {
@@ -56,7 +56,7 @@ window.pageTexts.notch = {
     kicker: 'VERTICALS',
     subtitle: 'Differentiated services by industry',
     lead: 'Each market faces unique logistics challenges. We have developed specialized divisions with dedicated experts to optimize supply chains for the most demanding industries, providing efficiency, regulatory compliance and full visibility.',
-    cta: 'Discover our solutions',
+    cta: 'Solutions',
     stepTotal: '06',
     slides: [
       {
