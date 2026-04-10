@@ -49,7 +49,7 @@
 
 .cargo-lead {
     margin: 0.9rem auto 0;
-    max-width: min(112ch, 96%);
+    /* max-width: min(112ch, 96%); */
     color: #6d727a;
     font-size: var(--section-text-size);
     line-height: 1.55;
