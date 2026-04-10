@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     height: auto;
-    min-height: clamp(14rem, 60svh, 28rem);
+    min-height: clamp(19.60rem, 84.00svh, 39.20rem);
     overflow: hidden;
     clip-path: url(#rounded-clip);
     margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem);
@@ -57,5 +57,11 @@
         margin-top: 0;
         padding: var(--section-padding-vertical) var(--section-padding-horizontal);
         clip-path: none;
+    }
+}
+
+@media (max-height: 700px) {
+    .infrastructure-section {
+        min-height: 220px;
     }
 }

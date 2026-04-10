@@ -1,7 +1,7 @@
 .cargo-tech-section {
     --cargo-media-height: clamp(306px, 50.5vh, 629px);
     width: 100%;
-    padding: var(--section-padding-vertical) 7%;
+    padding: var(--section-padding-vertical) 10%;
     background: #eceef1;
     border: 1px solid #e1e3e8;
     box-shadow: 0 -8px 14px -14px rgba(18, 26, 40, 0.5), 0 20px 30px -18px rgba(18, 26, 40, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.55), inset 0 14px 22px -20px rgba(18, 26, 40, 0.28), inset 0 -14px 20px -16px rgba(18, 26, 40, 0.3);
@@ -154,7 +154,7 @@
 .cargo-stepper {
     --progress: 0%;
     position: sticky;
-    top: calc(var(--header-offset) + clamp(0.25rem, 1vw, 0.9rem));
+    top:  clamp(0.25rem, 1vw, 0.9rem);
     min-width: 2.8rem;
     min-height: clamp(16.8rem, 28.8vh, 22.8rem);
     max-height: 100%;

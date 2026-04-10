@@ -5,8 +5,8 @@
     position: relative;
     overflow: hidden;
     isolation: isolate;
-    --hero-title-size: clamp(3.2rem, 7.4vw, 3.7rem);
-    --hero-subtitle-size: clamp(1.0rem, 2.4vw, 1.3rem);
+    --hero-title-size: clamp(3.6rem, 8.2vw, 4.4rem);
+    --hero-subtitle-size: clamp(1.15rem, 2.7vw, 1.55rem);
     --hero-text-size: clamp(0.95rem, 1.2vw, 1.1rem);
 }
 
@@ -124,7 +124,7 @@
 /* Stats Bar - Glassmorphism */
 .stats-bar {
     position: absolute;
-    bottom: clamp(9%, 14vh, 30%);
+    bottom: calc(var(--hero-overlay-bottom-size) + clamp(1rem, 2.2vh, 1.8rem));
     right: clamp(0.8rem, 3.5vw, 2.2rem);
     z-index: 3;
     display: grid;
@@ -161,7 +161,7 @@
 }
 
 .stat-number {
-    font-size: clamp(1.3rem, 2.73vw, 1.95rem);
+    font-size: clamp(1.45rem, 3.05vw, 2.25rem);
     font-weight: 700;
     color: #ffffff;
     line-height: 1.1;
@@ -207,7 +207,7 @@
 }
 
 .stat-label {
-    font-size: clamp(0.8rem, 1.3vw, 0.99rem);
+    font-size: clamp(0.9rem, 1.45vw, 1.15rem);
     color: #ffffff;
     line-height: 1.25;
     opacity: 0.85;
@@ -221,7 +221,7 @@
         grid-template-columns: repeat(3, 1fr);
         width: min(52vw, 800px);
         padding: clamp(0.65rem, 1.3vw, 0.95rem) clamp(0.85rem, 1.8vw, 1.1rem);
-        bottom: 30%;
+        bottom: calc(var(--hero-overlay-bottom-size) + clamp(0.8rem, 1.8vh, 1.4rem));
     }
 
     .stat-item {
@@ -260,11 +260,11 @@
     }
 
     .hero-title {
-        font-size: clamp(2.45rem, 8vw, 3.4rem);
+        font-size: clamp(2.8rem, 8.8vw, 3.8rem);
     }
 
     .hero-text {
-        font-size: clamp(0.98rem, 3.2vw, 1.18rem);
+        font-size: clamp(1.12rem, 3.6vw, 1.35rem);
     }
 
     .stat-item {
@@ -312,17 +312,17 @@
 
 @media (max-width: 576px) {
     .hero-title {
-        font-size: 40.56px;
+        font-size: 44px;
     }
 
     .hero-text {
-        font-size: 25.35px;
+        font-size: 28px;
     }
 
     .hero-btn {
         width: 9.5rem;
         min-width: 9.5rem;
-        font-size: 1.453rem;
+        font-size: 1.6rem;
     }
 
 }
