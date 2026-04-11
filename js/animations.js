@@ -518,10 +518,39 @@ function initDynamicHeaderOffset() {
   }
 }
 
+function initHeaderThemeToggle() {
+  const header = document.querySelector('.site-header');
+  const hero = document.querySelector('.hero-section');
+  const logo = document.querySelector('.site-header .brand-logo');
+
+  if (!header || !hero || !logo) {
+    return;
+  }
+
+  const defaultLogoSrc = 'resources/logo/LOGOTIPO.webp';
+  const lightLogoSrc = 'resources/logo/LOGOTIPO_OSCURO.webp';
+
+  function updateHeaderTheme() {
+    const headerHeight = Math.ceil(header.getBoundingClientRect().height);
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    const shouldUseLightTheme = heroBottom <= headerHeight + 1;
+
+    header.classList.toggle('site-header--light', shouldUseLightTheme);
+    logo.src = shouldUseLightTheme ? lightLogoSrc : defaultLogoSrc;
+  }
+
+  updateHeaderTheme();
+
+  window.addEventListener('scroll', updateHeaderTheme, { passive: true });
+  window.addEventListener('resize', updateHeaderTheme, { passive: true });
+  window.addEventListener('orientationchange', updateHeaderTheme, { passive: true });
+}
+
 // Ejecutar cuando el DOM esté listo
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     initDynamicHeaderOffset();
+    initHeaderThemeToggle();
     initLenisSmoothScroll();
     animateCounters();
     initCargoCarousel();
@@ -529,6 +558,7 @@ if (document.readyState === 'loading') {
   });
 } else {
   initDynamicHeaderOffset();
+  initHeaderThemeToggle();
   initLenisSmoothScroll();
   animateCounters();
   initCargoCarousel();
