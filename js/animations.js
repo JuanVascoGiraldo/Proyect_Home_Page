@@ -528,8 +528,8 @@ function initHeaderThemeToggle() {
     return;
   }
 
-  const defaultLogoSrc = 'resources/logo/LOGOTIPO.webp';
-  const lightLogoSrc = 'resources/logo/LOGOTIPO_OSCURO.png';
+  const defaultLogoSrc = 'resources/logo/a1.png';
+  const lightLogoSrc = 'resources/logo/a2.png';
   const triggerElement = statsBar || hero;
 
   function updateHeaderTheme() {
