@@ -528,7 +528,7 @@ function initHeaderThemeToggle() {
   }
 
   const defaultLogoSrc = 'resources/logo/LOGOTIPO.webp';
-  const lightLogoSrc = 'resources/logo/LOGOTIPO_OSCURO.webp';
+  const lightLogoSrc = 'resources/logo/LOGOTIPO_OSCURO.png';
 
   function updateHeaderTheme() {
     const headerHeight = Math.ceil(header.getBoundingClientRect().height);
