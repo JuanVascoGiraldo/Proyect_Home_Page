@@ -528,7 +528,7 @@ function initHeaderThemeToggle() {
     return;
   }
 
-  const defaultLogoSrc = 'resources/logo/a1.png';
+  const defaultLogoSrc = 'resources/logo/LOGOTIPO.webp';
   const lightLogoSrc = 'resources/logo/a2.png';
   const triggerElement = statsBar || hero;
 
