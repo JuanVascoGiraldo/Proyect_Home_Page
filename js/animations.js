@@ -521,6 +521,7 @@ function initDynamicHeaderOffset() {
 function initHeaderThemeToggle() {
   const header = document.querySelector('.site-header');
   const hero = document.querySelector('.hero-section');
+  const statsBar = document.querySelector('.stats-bar');
   const logo = document.querySelector('.site-header .brand-logo');
 
   if (!header || !hero || !logo) {
@@ -529,11 +530,12 @@ function initHeaderThemeToggle() {
 
   const defaultLogoSrc = 'resources/logo/LOGOTIPO.webp';
   const lightLogoSrc = 'resources/logo/LOGOTIPO_OSCURO.png';
+  const triggerElement = statsBar || hero;
 
   function updateHeaderTheme() {
     const headerHeight = Math.ceil(header.getBoundingClientRect().height);
-    const heroBottom = hero.getBoundingClientRect().bottom;
-    const shouldUseLightTheme = heroBottom <= headerHeight + 1;
+    const triggerBottom = triggerElement.getBoundingClientRect().bottom;
+    const shouldUseLightTheme = triggerBottom <= headerHeight + 1;
 
     header.classList.toggle('site-header--light', shouldUseLightTheme);
     logo.src = shouldUseLightTheme ? lightLogoSrc : defaultLogoSrc;
