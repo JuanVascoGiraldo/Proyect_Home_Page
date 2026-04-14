@@ -87,7 +87,7 @@
 }
 
 .site-header--light .main-nav .nav-link {
-    color: var(--color3);
+    color: #1F3864;
 }
 
 .main-nav .nav-link:hover,
@@ -100,7 +100,7 @@
 .site-header--light .main-nav .nav-link:hover,
 .site-header--light .main-nav .nav-link:focus-visible,
 .site-header--light .main-nav .nav-link.is-active {
-    color: var(--color7);
+    color: #1F3864;
 }
 
 .locale-tools {
@@ -123,7 +123,7 @@
 
 .site-header--light .locale-country,
 .site-header--light .lang-select {
-    color: var(--color3);
+    color: #1F3864;
 }
 
 .locale-country {
@@ -152,7 +152,7 @@
 .site-header--light .locale-country:hover,
 .site-header--light .lang-select:hover,
 .site-header--light .lang-select:focus-visible {
-    color: var(--color7);
+    color: #1F3864;
 }
 
 .lang-select {
