@@ -30,7 +30,7 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     column-gap: 2.4rem;
-    padding: 0.25rem 7%;
+    padding: 0.25rem 7% 0.25rem 4%;
     padding-top: 0.5rem;
 }
 
