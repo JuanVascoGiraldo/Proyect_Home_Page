@@ -61,14 +61,14 @@
     background: #0072bc;
     color: #ffffff;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: lighter;
     border-radius: 8px;
     border: 2px solid #0072bc;
     transition: all 0.3s ease;
     width: clamp(9.5rem, 15vw, 11rem);
     min-width: clamp(9.5rem, 15vw, 11rem);
     padding: 0.3rem 1.15rem;
-    font-size: clamp(1.0rem, 2.4vw, 1.3rem);
+    font-size: clamp(0.9rem, 2.16vw, 1.17rem);
 }
 
 .innovation-btn:hover {
@@ -109,7 +109,7 @@
     border-radius: 0;
     color: #21252b;
     font-size: clamp(0.919rem, 1.225vw, 1.122rem);
-    font-weight: 600;
+    font-weight: lighter;
     text-align: left;
     cursor: pointer;
     transition: all 0.3s ease;

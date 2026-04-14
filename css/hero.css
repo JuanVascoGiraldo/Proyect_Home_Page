@@ -6,7 +6,7 @@
     overflow: hidden;
     isolation: isolate;
     --hero-title-size: clamp(3.9rem, 9.02vw, 4.84rem);
-    --hero-subtitle-size: clamp(1.15rem, 2.7vw, 1.55rem);
+    --hero-subtitle-size: clamp(1.03rem, 2.43vw, 1.40rem);
     --hero-text-size: clamp(0.95rem, 1.2vw, 1.1rem);
 }
 
@@ -81,6 +81,8 @@
 .hero-text {
     margin: 1.4rem 0;
     font-size: var(--hero-subtitle-size);
+    /* color: var(--color5); */
+    font-weight: lighter;
     line-height: 1.5;
     /* max-width: 52ch; */
     white-space: pre-line;
@@ -102,8 +104,8 @@
     padding: 0.3rem 1.15rem;
     border-radius: 8px;
     text-decoration: none;
-    font-size:  var(--hero-subtitle-size);
-    /* font-weight: 600; */
+    font-size: clamp(0.927rem, 2.187vw, 1.26rem);
+    font-weight: lighter;
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .hero-btn-primary {
@@ -211,7 +213,7 @@
     color: #ffffff;
     line-height: 1.25;
     opacity: 0.85;
-    font-weight: 500;
+    font-weight: lighter;
     max-width: 100%;
     white-space: pre-line;
 }
@@ -322,7 +324,7 @@
     .hero-btn {
         width: 9.5rem;
         min-width: 9.5rem;
-        font-size: 1.6rem;
+        font-size: 1.44rem;
     }
 
 }
